@@ -22,6 +22,8 @@ Each module has a short rationale, a hands-on lab, the relevant manual topics (e
 
 Tick off labs and topics as you go. Progress and notes are saved in your own browser on the device you use; nothing is sent to a server. Use the same browser to pick up where you left off.
 
+To move progress to another browser or device, open **Export or import your progress** below the toolbar: download a progress file (or copy it as text) on one device, then import it on the other. Import can merge with what's already there or replace it.
+
 ## Notes
 
 Topic numbers follow the manual's own table of contents. This is an independent study aid and is not affiliated with Astrolabe, the publisher of Solar Fire.

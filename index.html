@@ -87,6 +87,20 @@ input[type=checkbox]{accent-color:var(--done);width:16px;height:16px;margin:4px 
 button.ghost{font-family:var(--f-mono);font-size:12px;background:none;border:1px solid var(--line);color:var(--muted);border-radius:4px;padding:5px 10px;cursor:pointer}
 button.ghost:hover{color:var(--ink);border-color:var(--muted)}
 footer{color:var(--muted);font-size:14px;border-top:1px solid var(--line);padding-top:16px}
+details.porter{background:var(--surface);border:1px solid var(--line);border-radius:6px;margin-top:-16px}
+details.porter>summary{display:flex;gap:10px;align-items:center;padding:10px 14px;font-family:var(--f-mono);font-size:12.5px;color:var(--muted)}
+details.porter>summary::before{content:"+";color:var(--brass);width:1em}
+details.porter[open]>summary::before{content:"\2212"}
+.porter-body{padding:4px 14px 16px;display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.porter-body h4{margin:0 0 4px;font-size:15px;font-weight:600}
+.porter-body p{margin:0 0 10px;font-size:14px;color:var(--muted)}
+.porter-body textarea{width:100%;min-height:72px;font-family:var(--f-mono);font-size:11.5px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:8px;resize:vertical}
+.porter-body input[type=file]{font-family:var(--f-mono);font-size:12px;color:var(--muted);max-width:100%}
+button.solid{font-family:var(--f-mono);font-size:12px;background:var(--brass);border:1px solid var(--brass);color:var(--surface);border-radius:4px;padding:5px 12px;cursor:pointer}
+.confirm{grid-column:1/-1;background:var(--brass-soft);border-radius:5px;padding:12px 14px;display:grid;gap:10px}
+.confirm p{margin:0;color:var(--ink)}
+.pmsg{grid-column:1/-1;font-family:var(--f-mono);font-size:12px;color:var(--done);min-height:1em;margin:0}
+.pmsg.err{color:var(--brass)}
 @media (prefers-reduced-motion:no-preference){.dial .arc{transition:stroke-dashoffset .6s ease}.mini i,.bar i{transition:width .4s ease}}
 </style>
 </head>
@@ -117,6 +131,32 @@ footer{color:var(--muted);font-size:14px;border-top:1px solid var(--line);paddin
       <span class="status" id="status">Loading saved progress…</span>
     </div>
   </div>
+
+  <details class="porter" id="porter">
+    <summary>Export or import your progress</summary>
+    <div class="porter-body">
+      <div>
+        <h4>Export</h4>
+        <p>Save your ticks and notes to a file, or copy them as text, to move them to another browser or device or keep a backup.</p>
+        <div class="rowbtns"><button class="ghost" type="button" id="exFile">Download progress file</button><button class="ghost" type="button" id="exCopy">Copy as text</button></div>
+        <textarea id="exText" readonly hidden aria-label="Progress as text"></textarea>
+      </div>
+      <div>
+        <h4>Import</h4>
+        <p>Choose a progress file, or paste progress text, from another browser.</p>
+        <div style="display:grid;gap:10px">
+          <input type="file" id="imFile" accept=".json,application/json,text/plain" aria-label="Choose a progress file">
+          <textarea id="imText" placeholder="Or paste progress text here" aria-label="Paste progress text"></textarea>
+          <div class="rowbtns"><button class="ghost" type="button" id="imLoad">Load pasted text</button></div>
+        </div>
+      </div>
+      <div class="confirm" id="imConfirm" hidden>
+        <p id="imSummary"></p>
+        <div class="rowbtns"><button class="solid" type="button" id="imMerge">Merge with mine</button><button class="ghost" type="button" id="imReplace">Replace mine</button><button class="ghost" type="button" id="imCancel">Cancel</button></div>
+      </div>
+      <p class="pmsg" id="pmsg" role="status"></p>
+    </div>
+  </details>
 
   <main id="plan" style="display:grid;gap:36px"></main>
 
@@ -307,6 +347,47 @@ document.addEventListener("input",e=>{const t=e.target;if(t.matches("textarea[da
  clearTimeout(noteTimers[n]);noteTimers[n]=setTimeout(()=>save(n),900);}});
 document.addEventListener("click",e=>{const b=e.target.closest("[data-all]");if(!b||!canWrite)return;const n=+b.dataset.all;const m=MODULES.find(x=>x.n===n);
  const today=new Date().toISOString().slice(0,10);m.t.forEach(([num])=>{const k=keyOf(num);if(!state[n].done[k])state[n].done[k]=today});apply();save(n);});
+
+
+// Export / import
+const countTicks=st=>Object.values(st).reduce((a,m)=>a+Object.keys((m&&m.done)||{}).length,0);
+const pmsg=(t,err)=>{const el=$("#pmsg");el.textContent=t;el.classList.toggle("err",!!err)};
+function exportPayload(){return JSON.stringify({app:"sfx-study-plan",version:1,exported:new Date().toISOString(),progress:state})}
+$("#exFile").addEventListener("click",()=>{
+ try{const blob=new Blob([exportPayload()],{type:"application/json"});const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);a.download="sfx-progress-"+new Date().toISOString().slice(0,10)+".json";document.body.appendChild(a);a.click();
+  setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},1000);pmsg("Progress file downloaded.")}
+ catch(e){pmsg("This browser blocked the download. Use Copy as text instead.",true)}});
+$("#exCopy").addEventListener("click",()=>{const ta=$("#exText");ta.value=exportPayload();ta.hidden=false;
+ const sel=()=>{ta.focus();ta.select()};
+ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(ta.value).then(()=>pmsg("Copied. Paste it into the Import box in your other browser."),()=>{sel();pmsg("Text selected below. Press Cmd+C or Ctrl+C to copy.")})}
+ else{sel();pmsg("Text selected below. Press Cmd+C or Ctrl+C to copy.")}});
+let pending=null;
+function parseImport(text){
+ let o;try{o=JSON.parse(text)}catch(_){throw new Error("That isn't progress text from this plan. Copy it again from Export.")}
+ if(!o||o.app!=="sfx-study-plan"||typeof o.progress!=="object")throw new Error("That file isn't a progress export from this study plan.");
+ const clean={};MODULES.forEach(m=>{const v=o.progress[m.n];if(v&&typeof v==="object"){const done={};const ok=new Set(["lab",...m.t.map(([num])=>keyOf(num))]);
+  Object.entries(v.done||{}).forEach(([k,d])=>{if(ok.has(k))done[k]=String(d).slice(0,10)});clean[m.n]={done,notes:typeof v.notes==="string"?v.notes.slice(0,20000):""}}});
+ return clean;}
+function stage(text){
+ try{pending=parseImport(text)}catch(e){pending=null;$("#imConfirm").hidden=true;pmsg(e.message,true);return}
+ $("#imSummary").textContent=`The import has ${countTicks(pending)} ticked items; you currently have ${countTicks(state)}. Merge keeps everything ticked in either. Replace discards your current progress and notes here.`;
+ $("#imConfirm").hidden=false;pmsg("");}
+$("#imFile").addEventListener("change",e=>{const f=e.target.files&&e.target.files[0];if(!f)return;
+ if(f.size>2e6){pmsg("That file is too large to be a progress export.",true);return}
+ const r=new FileReader();r.onload=()=>stage(String(r.result));r.onerror=()=>pmsg("Couldn't read that file. Try again or paste the text instead.",true);r.readAsText(f);});
+$("#imLoad").addEventListener("click",()=>{const t=$("#imText").value.trim();if(!t){pmsg("Paste progress text first.",true);return}stage(t)});
+function finishImport(mode){
+ if(!pending||!canWrite)return;
+ MODULES.forEach(m=>{const inc=pending[m.n];if(mode==="replace"){state[m.n]=inc?{done:{...inc.done},notes:inc.notes}:{done:{},notes:""};}
+  else if(inc){const cur=state[m.n];const done={...inc.done,...cur.done};let notes=cur.notes||"";
+   if(inc.notes&&inc.notes.trim()&&!notes.includes(inc.notes.trim()))notes=notes?notes+"\n\n"+inc.notes:inc.notes;state[m.n]={done,notes};}
+  save(m.n);});
+ const n=countTicks(state);pending=null;$("#imConfirm").hidden=true;$("#imText").value="";$("#imFile").value="";apply();
+ pmsg(`Progress imported. ${n} items are now ticked.`);}
+$("#imMerge").addEventListener("click",()=>finishImport("merge"));
+$("#imReplace").addEventListener("click",()=>finishImport("replace"));
+$("#imCancel").addEventListener("click",()=>{pending=null;$("#imConfirm").hidden=true;pmsg("Import cancelled.")});
 
 render();
 try{$("#hideDone").checked=localStorage.getItem(LKEY+"-hide")==="1"}catch(_){}
