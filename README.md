@@ -16,7 +16,7 @@ A structured route through every chapter of the [Solar Fire X User Guide](https:
 6. **Presentation and Customization** – wheel and page design, printing, interpretations and the compiler
 7. **Specialist Arenas** – Solar Maps (astrocartography), symmetrical dials, practice tools, and a capstone
 
-Each module has a short rationale, a hands-on lab, the relevant manual topics (each linked to its page in the guide) and a notes box.
+Each module has a short rationale, links to the guide sections it draws on, a hands-on lab, and every manual topic with a one-line explanation and the basic step to try it in Solar Fire, so you rarely need to leave the page. There's also a notes box per module.
 
 ## Your progress
 
