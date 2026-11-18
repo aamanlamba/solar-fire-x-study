@@ -6,7 +6,7 @@ A structured route through every chapter of the [Solar Fire X User Guide](https:
 
 ## What's in it
 
-21 modules in seven phases, about eight weeks at three sessions a week:
+22 modules in seven phases, about eight weeks at three sessions a week:
 
 1. **Foundations** – a traditional settings baseline, interface fluency, data entry, chart files and collections
 2. **The Classical Toolkit** – points, aspects and orbs; dignities, almutens, rulerships and hylegs; reports
@@ -14,7 +14,7 @@ A structured route through every chapter of the [Solar Fire X User Guide](https:
 4. **The Sky Itself** – the full speculum and in mundo work, parans, fixed stars, lots, asteroids, planetarium
 5. **Horary, Election and Search** – chart search and electional search
 6. **Presentation and Customization** – wheel and page design, printing, interpretations and the compiler
-7. **Specialist Arenas** – Solar Maps (astrocartography), symmetrical dials, practice tools, and a capstone
+7. **Specialist Arenas** – Solar Maps (astrocartography) with a follow-up module built around Clarisse Monahan's *Astrocartography* (DK, 2025), symmetrical dials, practice tools, and a capstone
 
 Each module has a short rationale, links to the guide sections it draws on, a hands-on lab, and every manual topic with a one-line explanation and the basic step to try it in Solar Fire, so you rarely need to leave the page. There's also a notes box per module.
 
