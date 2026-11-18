@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Every derived chart Solar Fire X can cast, grouped by Chart menu item, with what each one is and how it's read. A companion to Module 8 of the Solar Fire X Study Plan.">
+<meta property="og:title" content="Solar Fire X Subsidiary Charts Guide">
+<meta property="og:description" content="Every derived chart Solar Fire X can cast, with what each is and how it's read, plus a quick-reference table.">
+<meta property="og:image" content="https://aamanlamba.github.io/solar-fire-x-study/og-image.png">
+<title>Subsidiary Charts Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="guide.css">
+</head>
+<body>
+<main>
+<a class="back" href="../#m8">← Solar Fire X Study Plan</a>
+<p class="kicker">Companion to Modules 8–10</p>
+<h1>Subsidiary Charts Guide</h1>
+<p class="lede">Every derived chart Solar Fire X can cast, grouped by the Chart menu item that casts it, with what each one is and how it's read.</p>
+<nav class="toc" aria-label="Sections">
+<a href="#quick-reference">Quick reference</a>
+<a href="#tran-prog-dirn">Transits, progressions, directions</a>
+<a href="#returns">Returns and ingresses</a>
+<a href="#harmonic">Harmonic and transform</a>
+<a href="#combined">Combined</a>
+<a href="#prenatal">Prenatal</a>
+<a href="#rising-lunar">Rising/setting, lunar phase, eclipses</a>
+<a href="#locality-vedic">Locality and Vedic</a>
+</nav>
+
+<h2 id="quick-reference">Quick reference</h2>
+<p>Every chart type in the nine subsidiary-chart dialogs on the Chart menu, in menu order. The sections below explain each group.</p>
+<label class="filter">Filter <input id="q" type="search" placeholder="e.g. return, antiscia, composite" autocomplete="off"></label>
+<div class="tablewrap">
+<table id="ref">
+<thead><tr><th>Chart type</th><th>Chart menu item</th><th>What it is</th><th>Typical use</th></tr></thead>
+<tbody>
+<tr class="grp"><td colspan="4">Tran/Prog/Dirn (F4)</td></tr>
+<tr><td>Transits</td><td>Tran/Prog/Dirn</td><td>The sky at a chosen moment, set against a base chart</td><td>Current or event-day transits, usually in a biwheel</td></tr>
+<tr><td>Secondary progression</td><td>Tran/Prog/Dirn</td><td>One day after birth = one year of life</td><td>The main symbolic timing chart for the year</td></tr>
+<tr><td>Mean tertiary progression</td><td>Tran/Prog/Dirn</td><td>One day = one mean lunar month</td><td>Month-by-month timing</td></tr>
+<tr><td>True tertiary progression</td><td>Tran/Prog/Dirn</td><td>One day = each actual lunar month</td><td>Month-by-month timing, true-Moon variant</td></tr>
+<tr><td>Minor progression</td><td>Tran/Prog/Dirn</td><td>One lunar month = one year</td><td>Finer year timing between secondaries and tertiaries</td></tr>
+<tr><td>User-defined progression</td><td>Tran/Prog/Dirn</td><td>Your own rate, set in Preferences</td><td>Experimental rates</td></tr>
+<tr><td>Solar arc direction</td><td>Tran/Prog/Dirn</td><td>Every point moved by the progressed Sun's arc (about 1° a year)</td><td>Year-by-year timing of events</td></tr>
+<tr><td>Ascendant arc direction</td><td>Tran/Prog/Dirn</td><td>Every point moved by the progressed Ascendant's arc</td><td>Timing keyed to the Ascendant</td></tr>
+<tr><td>Vertex arc direction</td><td>Tran/Prog/Dirn</td><td>Every point moved by the progressed Vertex's arc</td><td>Jayne-style timing</td></tr>
+<tr><td>User rate / user arc direction</td><td>Tran/Prog/Dirn</td><td>Every point moved by your own rate per year, or by a fixed arc</td><td>Naibod or other keys; testing a single arc</td></tr>
+<tr><td>Annual profection</td><td>Tran/Prog/Dirn</td><td>The whole chart turned 30° (one sign) per year</td><td>The profected year chart</td></tr>
+<tr class="grp"><td colspan="4">Return (F5)</td></tr>
+<tr><td>Solar return</td><td>Return</td><td>Sun returns to its natal degree</td><td>The year ahead (annual revolution)</td></tr>
+<tr><td>Lunar return</td><td>Return</td><td>Moon returns to its natal degree</td><td>The month ahead</td></tr>
+<tr><td>Planetary or asteroid return</td><td>Return</td><td>Any planet returns to its natal degree</td><td>Long cycles, e.g. Saturn and Jupiter returns</td></tr>
+<tr><td>Partial (harmonic) returns</td><td>Return</td><td>Sun or Moon at 180°, 90° and so on from natal (demi, quarti)</td><td>Half-year and quarter-year checkpoints</td></tr>
+<tr><td>Wynn-Key return</td><td>Return</td><td>Planets for a chosen date, angles interpolated between solar returns</td><td>Timing within the solar return year</td></tr>
+<tr><td>Progressed solar return (PSSR)</td><td>Return</td><td>Solar return planets progressed to a chosen date, with interpolated angles</td><td>Timing within the solar return year</td></tr>
+<tr><td>Ingress</td><td>Return</td><td>A planet entering a sign, e.g. Sun into 0° Aries</td><td>Mundane charts for the year or season</td></tr>
+<tr><td>Transit to a point</td><td>Return</td><td>The exact moment a planet reaches a natal point or chosen degree</td><td>Event chart for a transit's exact hit</td></tr>
+<tr class="grp"><td colspan="4">Harmonic/Transform (F6)</td></tr>
+<tr><td>Harmonic</td><td>Harmonic/Transform</td><td>Every longitude multiplied by a number</td><td>Harmonic analysis (5th, 7th, 9th)</td></tr>
+<tr><td>Harmonic age / age+1</td><td>Harmonic/Transform</td><td>Harmonic number = exact age (or age plus one)</td><td>Harmonic timing for the current year</td></tr>
+<tr><td>Arc transform</td><td>Harmonic/Transform</td><td>Harmonic chosen so two given points fall in exact conjunction</td><td>Studying one planetary pair</td></tr>
+<tr><td>Antiscia</td><td>Harmonic/Transform</td><td>Every point mirrored across the Cancer–Capricorn axis</td><td>Hidden conjunctions by antiscion</td></tr>
+<tr><td>Contra-antiscia</td><td>Harmonic/Transform</td><td>Every point mirrored across the Aries–Libra axis</td><td>Hidden oppositions by contra-antiscion</td></tr>
+<tr><td>Longitude equivalent of declination</td><td>Harmonic/Transform</td><td>Declinations turned into ecliptic longitudes (also as antiscia)</td><td>Parallels shown as conjunctions</td></tr>
+<tr><td>Zodiacal analogues (latitude, RA, declination, azimuth, local horizon, altitude, prime vertical, PV amplitude, diurnal arc)</td><td>Harmonic/Transform</td><td>One coordinate expressed as a longitude</td><td>In mundo and positional study; the prime vertical and diurnal arc versions are the Campanus and Placidus mundoscopes</td></tr>
+<tr class="grp"><td colspan="4">Combined</td></tr>
+<tr><td>Composite – midpoints</td><td>Combined</td><td>Midpoint of each pair of points and cusps</td><td>Relationship as an entity</td></tr>
+<tr><td>Composite – derived Ascendant</td><td>Combined</td><td>Midpoints of planets and MC; angles derived for the relationship's place</td><td>Composite with consistent houses</td></tr>
+<tr><td>Composite group</td><td>Combined</td><td>Average of up to 15 charts</td><td>Families, teams, groups</td></tr>
+<tr><td>Davison relationship</td><td>Combined</td><td>A real chart for the midpoint in time and place of two births</td><td>Relationship chart that can be progressed and transited</td></tr>
+<tr><td>Coalescent</td><td>Combined</td><td>Harmonic blend of each planet pair (Grinnell and Dukelow)</td><td>Experimental synastry</td></tr>
+<tr class="grp"><td colspan="4">Prenatal</td></tr>
+<tr><td>Bailey conception and quickening</td><td>Prenatal</td><td>Epochs about 10 and 5 lunar months before birth, Moon–Ascendant exchange</td><td>Mental and emotional levels (Bailey, Artley)</td></tr>
+<tr><td>Bailey birth (C) and birth (Q)</td><td>Prenatal</td><td>A birth chart derived from a known conception or quickening</td><td>Rectification</td></tr>
+<tr><td>Jayne prenatal epochs</td><td>Prenatal</td><td>16 epochs, one per planet, from about 13 years to 2 months before birth</td><td>Jayne's prenatal analysis</td></tr>
+<tr class="grp"><td colspan="4">Rising/Setting and Lunar Phase</td></tr>
+<tr><td>Rising, setting, culminating, anti-culminating</td><td>Rising/Setting</td><td>The moment a planet crosses an angle on a given day (true or visual)</td><td>Heliacal and visibility work; daily timing</td></tr>
+<tr><td>Progressed lunar phases</td><td>Lunar Phase</td><td>The 8 phases of the progressed Sun–Moon cycle</td><td>The roughly 30-year progressed lunation cycle</td></tr>
+<tr><td>Transiting lunar phases</td><td>Lunar Phase</td><td>New, first quarter, full and last quarter moons</td><td>Monthly and mundane timing</td></tr>
+<tr><td>Lunar phase return</td><td>Lunar Phase</td><td>Sun–Moon angle returns to its natal value</td><td>Monthly personal cycle</td></tr>
+<tr><td>Lunar phase family</td><td>Lunar Phase</td><td>Phases linked at 9-month intervals (Pessin)</td><td>Eclipse and lunation timing</td></tr>
+<tr><td>Eclipses (list, solar, lunar or either)</td><td>Lunar Phase</td><td>Chart for an eclipse</td><td>Eclipse charts and their effect on a nativity</td></tr>
+<tr><td>New moon, full moon, syzygy</td><td>Lunar Phase</td><td>The nearest new or full moon</td><td>The prenatal syzygy; lunation charts</td></tr>
+<tr class="grp"><td colspan="4">Locality and Vedic</td></tr>
+<tr><td>Relocated</td><td>Locality</td><td>Birth moment, new place</td><td>Where you live now; relocation</td></tr>
+<tr><td>Geodetic</td><td>Locality</td><td>Angles set by geographic longitude, not time</td><td>Mundane and place astrology</td></tr>
+<tr><td>Johndro</td><td>Locality</td><td>Geodetic with a precession adjustment</td><td>Mundane and place astrology</td></tr>
+<tr><td>Vedic natal</td><td>Vedic</td><td>The natal chart in a sidereal zodiac</td><td>Jyotish work</td></tr>
+<tr><td>Vedic divisional (vargas)</td><td>Vedic</td><td>Divisional charts such as the navamsa</td><td>Jyotish detail by life area</td></tr>
+</tbody>
+</table>
+</div>
+<p class="note">Primary directions aren't cast as charts here: they're in <span class="menu">Dynamic &gt; Transits &amp; Progressions</span> (Module 9).</p>
+
+<h2 id="tran-prog-dirn">Transits, progressions and directions</h2>
+<p><span class="menu">Chart &gt; Tran/Prog/Dirn (F4)</span> These move a natal chart forward to a date. Read them against the natal chart in a biwheel, never on their own.</p>
+<ul>
+<li><strong>Transits</strong> are the real sky at a moment. Read the transiting planet as the agent and the natal point it contacts as the area of life touched. Casting them here rather than as a new chart lets you pull dates from stored life events.</li>
+<li><strong>Progressions</strong> use a symbolic rate. <strong>Secondary</strong> (a day for a year) is the standard: the progressed Moon's sign and house, the progressed lunation and planets changing sign or direction mark the chapters of life. <strong>Tertiary</strong> (a day for a month) and <strong>minor</strong> (a month for a year) are finer clocks for timing within a year.</li>
+<li><strong>Directions</strong> move every point by the same arc, so the natal aspects stay intact and the whole chart shifts. <strong>Solar arc</strong> (about 1° a year) is the usual one: read directed planets reaching natal angles and planets, with an orb of about 1° (one year). <strong>Ascendant arc</strong> and <strong>vertex arc</strong> are variants using other progressed points.</li>
+<li><strong>Annual profection</strong> turns the chart one sign per year. The sign the Ascendant reaches and its ruler, the lord of the year, frame that year: the Hellenistic technique in chart form.</li>
+</ul>
+<p><strong>Options:</strong> precession correction measures the motion in the sidereal zodiac; <em>converse</em> runs the progression or direction backwards in time. Set angle progression, day type and your own rates in <span class="menu">Preferences &gt; Edit Settings &gt; Progs/Dirns</span>.</p>
+
+<h2 id="returns">Returns, ingresses and transits to points</h2>
+<p><span class="menu">Chart &gt; Return (F5)</span> These are real charts for the exact moment something returns or arrives. Each stands as a chart in its own right for the period it opens, and is also read against the natal chart.</p>
+<ul>
+<li><strong>Solar return</strong> (annual revolution): the Sun back on its natal degree. Read the return Ascendant and its ruler, angular planets, and the house the return Sun falls in, for the year from one birthday to the next. Cast it for where you are on the birthday (Relocated), not the birthplace.</li>
+<li><strong>Lunar return</strong>: the same for the Moon, about every 27.3 days, for the month ahead.</li>
+<li><strong>Planetary returns</strong>: Saturn (about 29½ years), Jupiter (about 12) and others mark long cycles; read the return chart as the start of the next cycle.</li>
+<li><strong>Partial returns</strong> (demi, quarti and other harmonic returns): the Sun or Moon at 180°, 90° and so on from its natal place. Checkpoints within the year or month.</li>
+<li><strong>Wynn-Key return</strong> and <strong>progressed solar return (PSSR)</strong>: charts for any date within the solar return year, with angles interpolated between consecutive solar returns. For timing events inside the year.</li>
+<li><strong>Ingress</strong>: a planet entering a sign. The Sun's ingress into Aries, cast for a capital, is the classical mundane chart for the year, with the Cancer, Libra and Capricorn ingresses for the seasons.</li>
+<li><strong>Transit to a point</strong>: the exact moment a transit perfects to a natal point or chosen degree, as an event chart.</li>
+</ul>
+<p><strong>Options:</strong> precession correction gives the sidereal (precessed) return; the Which Return choice finds the current, next or nearest return.</p>
+
+<h2 id="harmonic">Harmonic and transform charts</h2>
+<p><span class="menu">Chart &gt; Harmonic/Transform (F6)</span> These recalculate the natal chart's own positions in a different frame, to show relationships the ordinary wheel hides. They describe the nativity, not a time.</p>
+<ul>
+<li><strong>Harmonic charts</strong> multiply every longitude by a number, so aspects of that harmonic become conjunctions. The 5th shows quintile themes (creativity, skill), the 7th septile themes (inspiration), the 9th the navamsa-like ninth division. <strong>Harmonic age</strong> uses your exact age as the number, a timing variant used in harmonic astrology.</li>
+<li><strong>Arc transform</strong> picks the harmonic that brings one chosen pair of planets into exact conjunction, to study that pair alone.</li>
+<li><strong>Antiscia</strong> mirrors each point across the solstice axis (0° Cancer–0° Capricorn). Natal points conjunct an antiscion are linked as if by conjunction; this is the classical antiscia doctrine in chart form. <strong>Contra-antiscia</strong> use the equinox axis and act like oppositions.</li>
+<li><strong>Longitude equivalent of declination</strong> converts declination into longitude, so planets in parallel appear conjunct. The antiscia version shows contra-parallels.</li>
+<li><strong>Zodiacal analogues</strong> express one coordinate (latitude, right ascension, declination, azimuth, local horizon, altitude, prime vertical, prime vertical amplitude or diurnal arc) as a longitude. They're tools for in mundo work: the diurnal arc version is a Placidus mundoscope and the prime vertical version a Campanus mundoscope, the frames for mundane aspects and Placidian primaries.</li>
+</ul>
+
+<h2 id="combined">Combined charts</h2>
+<p><span class="menu">Chart &gt; Combined</span> These merge two or more nativities into one chart for the relationship or group itself. Select the charts first, then choose the type.</p>
+<ul>
+<li><strong>Composite – midpoints</strong>: each point at the midpoint of the pair. Read it as the relationship's own nature: its Sun is the purpose, its Moon the emotional life, its angles how it meets the world. House cusps can come out of order.</li>
+<li><strong>Composite – derived Ascendant</strong>: midpoints for planets and the MC, with the Ascendant and houses derived for the relationship's place. Avoids the house problem.</li>
+<li><strong>Composite group</strong>: the average of up to 15 charts, for a family, team or company (Robert Hand's method).</li>
+<li><strong>Davison relationship</strong>: a real chart for the midpoint in time and in place between two births. Because it's a genuine moment, it can be progressed, directed and transited like a nativity.</li>
+<li><strong>Coalescent</strong>: a harmonic blend of each planet pair (Grinnell and Dukelow, 1992). Experimental.</li>
+</ul>
+<p>Composites can't be built from other composites; use the group method for more than two people.</p>
+
+<h2 id="prenatal">Prenatal charts</h2>
+<p><span class="menu">Chart &gt; Prenatal</span> Charts for moments before birth, from the old doctrine (attributed to Hermes) that the conception chart swaps the natal Moon and Ascendant.</p>
+<ul>
+<li><strong>Bailey conception</strong> (about 10 lunar months before birth) and <strong>Bailey quickening</strong> (about 5 lunar months): E. H. Bailey's prenatal epochs. Bailey and Jayne both read these as the mental and emotional levels of the person, beneath the physical birth chart. Bailey's method needs the sex of the subject.</li>
+<li><strong>Bailey birth (C)</strong> and <strong>birth (Q)</strong>: work backwards from a known conception or quickening to the birth chart. Used for rectification.</li>
+<li><strong>Jayne prenatal epochs</strong>: Charles Jayne's 16 epochs, one for each planet (including six hypotheticals), from the Chiron epoch about 13 years before birth to the Mars epoch two months before. Use the Jayne Uranus (C) and Jayne Birth (C) types when the sex is unknown.</li>
+</ul>
+<p>Solar Fire often offers several candidate charts and highlights the one it recommends; the lunar-cycles box lets you allow for a short or long pregnancy. The guide admits there's little published on interpreting these: start from Bailey, Jayne and Malvin Artley.</p>
+<p>The <strong>prenatal syzygy</strong>, the classical prenatal chart, is cast from the Lunar Phase dialog instead.</p>
+
+<h2 id="rising-lunar">Rising/setting, lunar phase and eclipse charts</h2>
+<p><span class="menu">Chart &gt; Rising/Setting</span> The moment a planet rises, sets, culminates or anti-culminates on a given day, at the base chart's place or another. <em>True altitude</em> uses the body's centre on the astronomical horizon; <em>visual</em> allows for refraction and the body's size, as an observer would see it. Use it for visibility questions (is a planet emerging from or disappearing under the Sun's beams?) and for timing by the angles.</p>
+<p><span class="menu">Chart &gt; Lunar Phase</span> Charts for points in the Sun–Moon cycle.</p>
+<ul>
+<li><strong>Progressed lunar phases</strong>: the eight phases of the progressed lunation, a roughly 30-year cycle. The progressed new moon opens a new chapter; the full moon is its culmination.</li>
+<li><strong>Transiting lunar phases</strong>: new, first quarter, full and last quarter moons, for monthly and mundane forecasting.</li>
+<li><strong>Lunar phase return</strong>: the Sun–Moon angle back at its natal value, a personal monthly chart.</li>
+<li><strong>Lunar phase family</strong>: phases linked at nine-month intervals (Dietrich Pessin's lunar gestation cycle), for eclipse timing.</li>
+<li><strong>Eclipses</strong>: pick from a list, or the last or next solar, lunar or either. Read the eclipse degree against the nativity, especially the luminaries and angles.</li>
+<li><strong>New moon, full moon, syzygy</strong>: the nearest lunation. Cast with the birth date, the last one before birth is the <strong>prenatal syzygy</strong>, used by Ptolemy and the medieval authors for the almuten of the figure and the hyleg.</li>
+</ul>
+<p>Eclipse times follow your <span class="menu">Preferences &gt; Eclipses</span> setting: exact lunar phase or maximum eclipse.</p>
+
+<h2 id="locality-vedic">Locality and Vedic charts</h2>
+<p><span class="menu">Chart &gt; Locality</span> The same birth moment seen from a different place.</p>
+<ul>
+<li><strong>Relocated</strong>: planets unchanged, angles and houses recalculated for a new place. Read it as how the nativity works where you live now; the natal chart still governs. This is the wheel version of what Solar Maps shows as lines (Modules 18 and 18b).</li>
+<li><strong>Geodetic</strong>: angles fixed by geography alone, projecting the zodiac onto the Earth (0° Aries at Greenwich by default). Used in mundane astrology for places and events.</li>
+<li><strong>Johndro</strong>: L. Edward Johndro's version of the geodetic chart, with a precession adjustment.</li>
+</ul>
+<p>Locality charts keep the base chart's house system and zodiac.</p>
+<p><span class="menu">Chart &gt; Vedic</span> <strong>Vedic natal</strong> recasts the chart in a sidereal zodiac (Lahiri by default). <strong>Divisional charts</strong> (vargas) such as the navamsa (D9) divide each sign to examine particular areas of life in Jyotish. Solar Fire warns if the base chart is tropical; toggle it to sidereal first with <span class="menu">Chart &gt; Edit &gt; Toggle Chart Zodiac</span>.</p>
+
+<footer>
+<p>Source: the Solar Fire X User Guide, topics 4.15 <a href="https://alabe.com/SFXManual/casting_subsidiary_charts.html">Casting Subsidiary Charts</a> and 11.2.2.1 Calculation Methods. An independent study aid, not affiliated with Astrolabe.</p>
+<p><a href="../">Back to the study plan</a></p>
+</footer>
+</main>
+<script>
+(()=>{const q=document.getElementById("q"),rows=[...document.querySelectorAll("#ref tbody tr")];
+q.addEventListener("input",()=>{const v=q.value.trim().toLowerCase();let grp=null,shown=0;
+rows.forEach(r=>{if(r.classList.contains("grp")){if(grp)grp.hidden=v&&!shown;grp=r;shown=0;return}
+const ok=!v||r.textContent.toLowerCase().includes(v);r.hidden=!ok;if(ok)shown++});
+if(grp)grp.hidden=v&&!shown;});})();
+</script>
+</body>
+</html>

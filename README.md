@@ -18,6 +18,8 @@ A structured route through every chapter of the [Solar Fire X User Guide](https:
 
 Each module has a short rationale, links to the guide sections it draws on, a hands-on lab, and every manual topic with a one-line explanation and the basic step to try it in Solar Fire, so you rarely need to leave the page. There's also a notes box per module.
 
+Some modules link to a companion guide in [`guides/`](guides/): the [Subsidiary Charts Guide](https://aamanlamba.github.io/solar-fire-x-study/guides/subsidiary-charts.html) (Modules 8–10) explains every chart type on the Chart menu, with a filterable quick-reference table.
+
 ## Your progress
 
 Tick off labs and topics as you go. Progress and notes are saved in your own browser on the device you use; nothing is sent to a server. Use the same browser to pick up where you left off.
