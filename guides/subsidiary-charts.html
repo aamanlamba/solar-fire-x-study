@@ -176,12 +176,6 @@
 <p><a href="../">Back to the study plan</a></p>
 </footer>
 </main>
-<script>
-(()=>{const q=document.getElementById("q"),rows=[...document.querySelectorAll("#ref tbody tr")];
-q.addEventListener("input",()=>{const v=q.value.trim().toLowerCase();let grp=null,shown=0;
-rows.forEach(r=>{if(r.classList.contains("grp")){if(grp)grp.hidden=v&&!shown;grp=r;shown=0;return}
-const ok=!v||r.textContent.toLowerCase().includes(v);r.hidden=!ok;if(ok)shown++});
-if(grp)grp.hidden=v&&!shown;});})();
-</script>
+<script src="guide.js"></script>
 </body>
 </html>

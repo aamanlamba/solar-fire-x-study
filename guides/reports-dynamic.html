@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Every chart report and tabulation in Solar Fire X, and every option in the dynamic report: event types, progressions, directions, primary direction methods and rate keys, report codes and the Time Map. A companion to Modules 7 and 9 of the Solar Fire X Study Plan.">
+<meta property="og:title" content="Solar Fire X Reports and Dynamic Options Guide">
+<meta property="og:description" content="Every chart report and tabulation, and every dynamic report option including primary directions and rate keys.">
+<meta property="og:image" content="https://aamanlamba.github.io/solar-fire-x-study/og-image.png">
+<title>Reports and Dynamic Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="guide.css">
+</head>
+<body>
+<main>
+<a class="back" href="../#m7">← Solar Fire X Study Plan</a>
+<p class="kicker">Companion to Modules 7 and 9</p>
+<h1>Reports and Dynamic Options Guide</h1>
+<p class="lede">Every chart report and tabulation in Solar Fire X, and every choice in the dynamic report, from event types to primary direction methods, rate keys and the codes in each report line.</p>
+<nav class="toc" aria-label="Sections">
+<a href="#quick-reference">Reports and tabulations</a>
+<a href="#report-screen">The report screen</a>
+<a href="#dynamic">Dynamic report options</a>
+<a href="#primaries">Primary directions</a>
+<a href="#rate-keys">Rate keys</a>
+<a href="#codes">Reading a report line</a>
+<a href="#timemap">Time Map</a>
+<a href="#recipes">Recipes</a>
+</nav>
+
+<h2 id="quick-reference">Reports and tabulations</h2>
+<p>Open <span class="menu">Reports &gt; Current Chart</span> (or Reports in View Chart). Reports are text listings on one tab, tabulations are ready-made pages of page objects on the other. Most reports also run as synastry reports between two charts from <span class="menu">Reports &gt; Synastry</span>.</p>
+<label class="filter">Filter <input id="q" type="search" placeholder="e.g. midpoint, dignities, eclipses" autocomplete="off"></label>
+<div class="tablewrap">
+<table id="ref">
+<thead><tr><th>Name</th><th>Type</th><th>What it lists</th><th>Use it for</th></tr></thead>
+<tbody>
+<tr class="grp"><td colspan="4">Core reports</td></tr>
+<tr><td>Chart Analysis</td><td>Report</td><td>Chart data, Delta T, sidereal time, angles and cusps to the second, each point's longitude, speed, latitude, declination, azimuth and altitude; stations; lunar phase; weighted elements, modes and house types; chart shape</td><td>The full data sheet; station flags (SD, DS, SR, RS)</td></tr>
+<tr><td>Rulerships</td><td>Report</td><td>Accidental dignity, receptions, rulership, detriment, exaltation, fall, final dispositor; each point's sign, house, houses ruled and dispositor</td><td>Dispositor chains</td></tr>
+<tr><td>Horary</td><td>Report</td><td>Planetary day and hour, house almutens, essential dignities table, hyleg by Bonatti and Ptolemy</td><td>Traditional chart assessment</td></tr>
+<tr class="grp"><td colspan="4">Aspects</td></tr>
+<tr><td>Aspects List</td><td>Report</td><td>Aspects in point order with orb, applying or separating</td><td>Reading every aspect</td></tr>
+<tr><td>Sorted Aspects</td><td>Report</td><td>Aspects from tightest to widest</td><td>What's most exact</td></tr>
+<tr><td>Aspects Analysis</td><td>Report</td><td>Aspect patterns with orb tightness, distribution grid, frequency versus expected</td><td>Patterns and emphasis</td></tr>
+<tr><td>Sensitive Points</td><td>Report</td><td>Every degree that aspects a chart point</td><td>Seeing what a transit will trigger</td></tr>
+<tr><td>Planetary Nodes</td><td>Report</td><td>Each planet's north and south nodes, their motion and aspects to them</td><td>Planetary node work</td></tr>
+<tr class="grp"><td colspan="4">Midpoints and harmonics</td></tr>
+<tr><td>Chart Point Sort</td><td>Report</td><td>Points sorted by position within a modulus</td><td>Hard-aspect clusters (modulus 45° or 22½°)</td></tr>
+<tr><td>Midpoint Listing</td><td>Report</td><td>All midpoints, in planet and in position order</td><td>Midpoint reference</td></tr>
+<tr><td>Midpoint Axes / Trees</td><td>Report</td><td>Each point with the midpoints within orb (across, or as a tree)</td><td>Uranian and Ebertin work</td></tr>
+<tr><td>Midpoint Modes</td><td>Report</td><td>Points and midpoints grouped by cardinal, fixed and mutable degree</td><td>8th-harmonic contacts to midpoints</td></tr>
+<tr><td>Difference Listing</td><td>Report</td><td>The arc from each point to each other point</td><td>Finding arcs for directions</td></tr>
+<tr><td>MWA</td><td>Report</td><td>Munkasey midpoint weighting analysis</td><td>Midpoint emphasis</td></tr>
+<tr class="grp"><td colspan="4">Lots, stars and extra bodies</td></tr>
+<tr><td>Arabic Parts</td><td>Report</td><td>Each part in the current parts file and its aspects</td><td>Lots</td></tr>
+<tr><td>Star Aspects</td><td>Report</td><td>Aspects to stars in the current star file, with keywords</td><td>Star conjunctions</td></tr>
+<tr><td>Star Parans</td><td>Report</td><td>Stars in paran with chart points, within the orb you set</td><td>Brady's method</td></tr>
+<tr><td>Asteroids / Other Bodies / Extra Ring Points</td><td>Report</td><td>Positions and aspects of the bodies in each file</td><td>Bodies beyond the standard set</td></tr>
+<tr class="grp"><td colspan="4">Tabulations: positions and phases</td></tr>
+<tr><td>Stations</td><td>Tabulation</td><td>Speed (fast, slow, stationary, retrograde), last and next station</td><td>Planetary speed and stations</td></tr>
+<tr><td>Rise/Set Times</td><td>Tabulation</td><td>Rise, culmination, set and anti-culmination values</td><td>Parans, visibility</td></tr>
+<tr><td>Declinations</td><td>Tabulation</td><td>Declination and its longitude equivalent, with a strip</td><td>Parallels, out of bounds</td></tr>
+<tr><td>Gauquelin Sectors</td><td>Tabulation</td><td>Each point's sector 1–36 and plus-zone flag</td><td>Gauquelin research</td></tr>
+<tr><td>Modulus Sort</td><td>Tabulation</td><td>Points by modulus with a graphic strip</td><td>Harmonic clusters</td></tr>
+<tr><td>Phases/Eclipses</td><td>Tabulation</td><td>Last four lunar phases and next; last two and next three eclipses</td><td>Lunation context</td></tr>
+<tr><td>Aspects – Closest</td><td>Tabulation</td><td>Up to 24 aspects by closeness</td><td>Quick view</td></tr>
+<tr><td>Chart Balances</td><td>Tabulation</td><td>Modes, elements, rays, quadrants, hemispheres (* = weighted)</td><td>Temperament overview</td></tr>
+<tr class="grp"><td colspan="4">Tabulations: traditional</td></tr>
+<tr><td>House Cusps</td><td>Tabulation</td><td>Each cusp with its almuten</td><td>House almutens</td></tr>
+<tr><td>Essential Dignities</td><td>Tabulation</td><td>Dignity table with scores and peregrine flag</td><td>Planetary condition</td></tr>
+<tr><td>Further Dignities</td><td>Tabulation</td><td>Sect, hour and day, hyleg, receptions, horary considerations, lunar aspects</td><td>Horary and natal assessment</td></tr>
+<tr><td>Almuten Scores</td><td>Tabulation</td><td>The general.alm almuten rankings</td><td>Almuten of the chart</td></tr>
+<tr><td>Planetary Hours</td><td>Tabulation</td><td>All planetary hours of the day</td><td>Elections</td></tr>
+<tr><td>Temperaments</td><td>Tabulation</td><td>Lilly's four temperaments, weighted</td><td>Temperament</td></tr>
+<tr><td>Firdaria</td><td>Tabulation</td><td>Firdaria periods and ages</td><td>Time lords</td></tr>
+<tr><td>Direction of Divisions</td><td>Tabulation</td><td>Ascendant directed through the terms</td><td>Time lords</td></tr>
+<tr><td>Zodiacal Releasing</td><td>Tabulation</td><td>Releasing periods from Spirit or Fortune, four levels</td><td>Time lords</td></tr>
+<tr><td>Arabic Mansions</td><td>Tabulation</td><td>Each point's lunar mansion with Picatrix, Arabic and English names</td><td>Mansions</td></tr>
+<tr class="grp"><td colspan="4">Tabulations: other traditions</td></tr>
+<tr><td>AstroDyne (Plan&amp;Asp, Houses, Signs)</td><td>Tabulation</td><td>Power and harmony scores</td><td>Weighting planets and houses</td></tr>
+<tr><td>Vedic Dasas / Nakshatras</td><td>Tabulation</td><td>Dasas and bhuktis; nakshatras, in the default sidereal zodiac</td><td>Jyotish</td></tr>
+<tr><td>Chinese Mansions / Miscellaneous</td><td>Tabulation</td><td>Chinese lunar mansions; 36-year cycle and Chinese year</td><td>Other systems</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2 id="report-screen">The report screen</h2>
+<ul>
+<li><strong>Modulus</strong> (point sort and midpoint reports): pick a harmonic 1–12 or type any angle, e.g. 45 for the 8th harmonic.</li>
+<li><strong>Orb</strong> (midpoint axes and trees, star parans): 0–10°, e.g. <code>0 20</code> for 20′.</li>
+<li><strong>Use Glyphs, Use Colors, Bold Text, Full Headers</strong>: display switches; Full Headers off saves paper.</li>
+<li><strong>Charts</strong>: switch to another calculated chart; tick <em>Auto-apply</em> to scroll through charts and watch the report update.</li>
+<li><strong>Copy</strong> puts plain text on the clipboard (abbreviations replace glyphs; columns may need tidying). <strong>Print</strong> prints with glyphs and colours.</li>
+</ul>
+
+<h2 id="dynamic">Dynamic report options</h2>
+<p><span class="menu">Dynamic &gt; Transits &amp; Progressions</span> opens the Dynamic Report Selection dialog. The choices, top to bottom:</p>
+<div class="tablewrap">
+<table>
+<thead><tr><th>Choice</th><th>Options</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>Dynamic Radix Chart</td><td>Any calculated chart; optional Alternate Radix Positions chart</td><td>With an alternate chart, one person's transits or progressions are measured to another's natal points</td></tr>
+<tr><td>Saved Selections</td><td>Your stored setups</td><td>Load, then adjust for this run</td></tr>
+<tr><td>Dates</td><td>Start date or Date Options; period in days, months or years</td><td>Now sets today; double-click Days, Months or Years to step back</td></tr>
+<tr><td>Location</td><td>Natal or Relocated; Auto DST</td><td>Natal for psychological timing; relocated mainly for lunar and angle transits</td></tr>
+<tr><td>Events</td><td>Transits to Radix, to Transits, to Progressions, to Directions; Progressions to Radix, to Progressions; Directions to Radix</td><td>At least one. Non-natal charts allow only transits</td></tr>
+<tr><td>Extra events</td><td>House ingress, sign ingress, parallels (declination or latitude), stations, eclipses, void Moon, entering/leaving</td><td>Entering/Leaving uses the transit orbs of the aspect set and catches slow transits that don't perfect in the period</td></tr>
+<tr><td>Progression type</td><td>Secondary, tertiary, minor, user rate; age harmonic, age+1 harmonic</td><td>User rate is set in Preferences &gt; Progs/Dirns</td></tr>
+<tr><td>Direction type</td><td>Solar arc, Ascendant arc, Vertex arc, user arc, primary mundane, primary zodiacal, primary van Dam, annual profections</td><td>Mult button (solar, Ascendant and Vertex arcs): ×2, ×½, negative arcs</td></tr>
+<tr><td>Primary Method</td><td>Placidus or Regiomontanus</td><td>For primary mundane and zodiacal</td></tr>
+<tr><td>Prec. Corr.</td><td>On or off</td><td>Measures motion sidereally; the report stays tropical</td></tr>
+<tr><td>Converse</td><td>On or off</td><td>Classical or modern converse is set in Preferences</td></tr>
+<tr><td>Points</td><td>Transits, Progs and Radix files, each with Extras</td><td>Outer planets only for long reports; add cusps or Fortune as radix extras</td></tr>
+<tr><td>Aspects</td><td>Separate aspect sets for transits and for progressions</td><td>Conjunctions and oppositions only for primaries is a common start</td></tr>
+<tr><td>Merge</td><td>Add to the previous report</td><td>Combine, say, solar arc and primary directions in one list</td></tr>
+<tr><td>View or Queue</td><td>Generate now, or add to the print queue</td><td>Queued reports print in date order</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2 id="primaries">Primary directions</h2>
+<p>A primary direction asks how far the sky must turn after birth before one point (the <strong>promissor</strong>) reaches the place another (the <strong>significator</strong>) held at birth; each degree of that turning is roughly a year of life. Choose a primary type under Direction type and select <em>Directions to Radix</em>.</p>
+<div class="tablewrap">
+<table>
+<thead><tr><th>Choice</th><th>What it means</th><th>Pick it when</th></tr></thead>
+<tbody>
+<tr><td>Primary Mundane</td><td>Directs the bodies' actual positions, latitude included ("with latitude"); aspects are mundane, measured by position in the diurnal arc</td><td>You follow Placidus, or want mundane aspects</td></tr>
+<tr><td>Primary Zodiacal</td><td>Directs the ecliptic degrees, latitude dropped ("without latitude"); aspects are by longitude, cast from the promissor</td><td>You follow the medieval and Renaissance zodiacal practice</td></tr>
+<tr><td>Primary van Dam</td><td>Wim van Dam's Placidian variant with its own time measure, positions given in longitude</td><td>Studying van Dam's "primary event analysis"</td></tr>
+<tr><td>Placidus method</td><td>Mundane position as a proportion of the semi-arc (Ptolemy, Placidus)</td><td>Ptolemaic and Placidian directions</td></tr>
+<tr><td>Regiomontanus method</td><td>Mundane position from the circle of position through the north and south points of the horizon</td><td>Renaissance and 17th-century directions (Regiomontanus, Morin, Lilly)</td></tr>
+<tr><td>Classical converse</td><td>Converse of A to B is the direct direction of B to A: the same arc</td><td>Ptolemaic practice; Solar Fire's default</td></tr>
+<tr><td>Modern converse</td><td>Directs A backwards to B, giving a different arc</td><td>19th-century and later practice</td></tr>
+</tbody>
+</table>
+</div>
+<p>In the report, Placidus mundane positions are shown as 0–360°, a quarter for each quadrant: rising at 0°, IC 90°, setting 180°, MC 270°. So a body directed to the MC shows 270°. <strong>Transits to Directions</strong> is also available: it finds when a transiting planet crosses the zodiacal degree a directed point has reached (its directional place).</p>
+
+<h2 id="rate-keys">Rate keys</h2>
+<p>Set in <span class="menu">Preferences &gt; Edit Settings &gt; Progs/Dirns</span>. All are close to a degree a year; over a long life the differences add up to a year or two.</p>
+<div class="tablewrap">
+<table>
+<thead><tr><th>Key</th><th>Rate</th><th>Note</th></tr></thead>
+<tbody>
+<tr><td>Ptolemy</td><td>1° = 1 year</td><td>The default and the simplest; Ptolemy's key</td></tr>
+<tr><td>Naibod</td><td>59′08″ = 1 year</td><td>The Sun's mean daily motion; widely used from the Renaissance on</td></tr>
+<tr><td>Cardan</td><td>59′12″ = 1 year</td><td>Close to Naibod</td></tr>
+<tr><td>Kepler (Brahe)</td><td>The Sun's motion in RA on the birth day = 1 year</td><td>Varies with season of birth</td></tr>
+<tr><td>Natal solar rate in longitude</td><td>The Sun's motion in longitude on the birth day = 1 year</td><td>Like Kepler, in longitude</td></tr>
+<tr><td>Placidus</td><td>True solar arc in RA: days for the Sun to cover the arc = years</td><td>Not a fixed rate</td></tr>
+<tr><td>User directions</td><td>Your own rate</td><td>Experimentation</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2 id="codes">Reading a report line</h2>
+<p>A line reads, for example: <code>Ura (10) Sqr Ven (7) (X) (Tr-Na) Jun 12 1993 11:07:23pm BST 19Cp23 R 19Li23 D</code>: transiting Uranus in the natal 10th, retrograde at 19° Capricorn, exactly squares natal Venus in the 7th.</p>
+<div class="tablewrap">
+<table>
+<thead><tr><th>Code</th><th>Meaning</th></tr></thead>
+<tbody>
+<tr><td>(X) (E) (L)</td><td>Exact; entering orb; leaving orb</td></tr>
+<tr><td>(B)</td><td>Already in orb at the start of the report</td></tr>
+<tr><td>(S) (H)</td><td>Sign ingress; house ingress</td></tr>
+<tr><td>Tr, Sp, Tp, Mp, Up</td><td>Transit; secondary, tertiary, minor, user-rate progression</td></tr>
+<tr><td>Sa, Aa, Va, Ua</td><td>Solar arc, Ascendant arc, Vertex arc, user arc direction</td></tr>
+<tr><td>Pm, Pz, Pv, Pf</td><td>Primary mundane, primary zodiacal, primary van Dam, profection</td></tr>
+<tr><td>Na, Pn, Di, Re, Co, Ha</td><td>Second point is natal, progressed, directed, return, composite or harmonic radix</td></tr>
+<tr><td>AH, A1</td><td>Age harmonic, age+1 harmonic</td></tr>
+<tr><td>prefix c, prefix p</td><td>Converse; precession corrected</td></tr>
+<tr><td>x2, x0.5, x-1 …</td><td>Arc multiplier used</td></tr>
+<tr><td>R, D after a position</td><td>Retrograde, direct; for parallels the position is declination or latitude; for Pm it is the mundane position</td></tr>
+</tbody>
+</table>
+</div>
+<p>For primary directions the first point is the promissor and the second the significator; the house shown is that of the directed point.</p>
+
+<h2 id="timemap">Time Map</h2>
+<p>From a dynamic report, <strong>Time Map</strong> draws each contact as a bar across the report period, grouping entering, exact and leaving into one line. Subscripts show the kind of point: t transiting, p progressed, d directed, n natal, r radix. <strong>Hit Nos</strong> labels repeated transit passes (1:3, 2:3, 3:3); <strong>Date</strong> shows the date of each exact hit (or the time, for periods under a week). Click lines to select, then Delete; drag to reorder; double-click for the interpretation.</p>
+
+<h2 id="recipes">Recipes</h2>
+<ul>
+<li><strong>Year-ahead transits:</strong> natal radix, start 1 January, period 1 year, Transits to Radix, Jupiter to Pluto as transiting points, Entering/Leaving on, plus Stations and Eclipses.</li>
+<li><strong>Primary directions for a life:</strong> Directions to Radix, Primary Zodiacal (or Mundane), Regiomontanus (or Placidus), period 80 years, the seven planets and angles as progressing and radix points, conjunction and opposition first, then add the other Ptolemaic aspects. Run it again with Converse ticked and Merge on.</li>
+<li><strong>Solar arc with Ascendant arc:</strong> run Solar Arc Directions to Radix, then run Ascendant Arc with Merge ticked.</li>
+<li><strong>Profections:</strong> Directions to Radix with Annual profections; look for the profected Ascendant reaching natal planets.</li>
+<li><strong>A relationship:</strong> one partner as Dynamic Radix, the other as Alternate Radix Positions, Progressions to Radix.</li>
+</ul>
+
+<footer>
+<p>Sources: the Solar Fire X User Guide, topics 4.11 <a href="https://alabe.com/SFXManual/descriptions_of_the_reports.html">Descriptions of the Reports</a> and <a href="https://alabe.com/SFXManual/descriptions_of_the_tabulations.html">Tabulations</a>, 5.2 <a href="https://alabe.com/SFXManual/generating_a_dynamic_report.html">Generating a Dynamic Report</a>, <a href="https://alabe.com/SFXManual/description_of_report_layout.html">Description of Report Layout</a>, <a href="https://alabe.com/SFXManual/time_map.html">Time Map</a>, <a href="https://alabe.com/SFXManual/primary_directions_in_solar_fi.html">Primary Directions in Solar Fire</a> and <a href="https://alabe.com/SFXManual/rate_for_primary_directions.html">Rate for Primary Directions</a>. An independent study aid, not affiliated with Astrolabe.</p>
+<p><a href="../">Back to the study plan</a></p>
+</footer>
+</main>
+<script src="guide.js"></script>
+</body>
+</html>

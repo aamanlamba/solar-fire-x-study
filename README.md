@@ -18,7 +18,13 @@ A structured route through every chapter of the [Solar Fire X User Guide](https:
 
 Each module has a short rationale, links to the guide sections it draws on, a hands-on lab, and every manual topic with a one-line explanation and the basic step to try it in Solar Fire, so you rarely need to leave the page. There's also a notes box per module.
 
-Some modules link to a companion guide in [`guides/`](guides/): the [Subsidiary Charts Guide](https://aamanlamba.github.io/solar-fire-x-study/guides/subsidiary-charts.html) (Modules 8–10) explains every chart type on the Chart menu, with a filterable quick-reference table.
+Some modules link to a companion guide in [`guides/`](guides/), each with a filterable quick-reference table:
+
+- [Subsidiary Charts Guide](https://aamanlamba.github.io/solar-fire-x-study/guides/subsidiary-charts.html) (Modules 8–10): every chart type on the Chart menu
+- [Dignities, Almutens and Hylegs Guide](https://aamanlamba.github.io/solar-fire-x-study/guides/dignities-almutens.html) (Modules 6–7): the .alm files, scoring, triplicity, term and face tables, almutens, hylegs, time lords
+- [Points, Aspects, Lots and Stars Guide](https://aamanlamba.github.io/solar-fire-x-study/guides/points-aspects-lots-stars.html) (Modules 5, 12, 13): point files, orbs and advanced aspect options, Arabic parts, fixed stars, parans, the speculum
+- [Reports and Dynamic Options Guide](https://aamanlamba.github.io/solar-fire-x-study/guides/reports-dynamic.html) (Modules 7, 9): every report and tabulation, dynamic report options, primary directions, rate keys, report codes
+- [Solar Maps Line Types Guide](https://aamanlamba.github.io/solar-fire-x-study/guides/solar-maps-lines.html) (Modules 18, 18b): every line type, overlay and report in Solar Maps
 
 ## Your progress
 

@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Every dignity, almuten, hyleg and time-lord tool in Solar Fire X: where it is, what it calculates, which scheme it uses and how to read it. A companion to Module 6 of the Solar Fire X Study Plan.">
+<meta property="og:title" content="Solar Fire X Dignities, Almutens and Hylegs Guide">
+<meta property="og:description" content="Every dignity, almuten, hyleg and time-lord tool in Solar Fire X, with the scoring, the triplicity and term schemes, and how to read the results.">
+<meta property="og:image" content="https://aamanlamba.github.io/solar-fire-x-study/og-image.png">
+<title>Dignities and Almutens Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="guide.css">
+</head>
+<body>
+<main>
+<a class="back" href="../#m6">← Solar Fire X Study Plan</a>
+<p class="kicker">Companion to Module 6</p>
+<h1>Dignities, Almutens and Hylegs Guide</h1>
+<p class="lede">Every place Solar Fire X scores dignity, finds an almuten or a hyleg, or lists a time lord: where it lives, which settings file drives it, and how to read what it shows.</p>
+<nav class="toc" aria-label="Sections">
+<a href="#quick-reference">Quick reference</a>
+<a href="#files">The .alm files</a>
+<a href="#scoring">Scoring</a>
+<a href="#schemes">Triplicities, terms, faces</a>
+<a href="#almutens">Almutens</a>
+<a href="#hylegs">Hylegs</a>
+<a href="#sect">Sect, receptions, horary</a>
+<a href="#timelords">Time lords</a>
+<a href="#rulerships">Rulership sets</a>
+<a href="#reading">Reading the scores</a>
+</nav>
+
+<h2 id="quick-reference">Quick reference</h2>
+<p>Every dignity-related report, tabulation and page object, plus the editors that control them. Tabulations are on <span class="menu">Reports &gt; Current Chart</span>, Tabulations tab; page objects are added in the Page Designer.</p>
+<label class="filter">Filter <input id="q" type="search" placeholder="e.g. almuten, hyleg, sect" autocomplete="off"></label>
+<div class="tablewrap">
+<table id="ref">
+<thead><tr><th>Item</th><th>Where</th><th>What it shows</th><th>Driven by</th></tr></thead>
+<tbody>
+<tr class="grp"><td colspan="4">Dignity scores</td></tr>
+<tr><td>Essential Dignities</td><td>Tabulation; page object; Horary report</td><td>For each point: ruler, exaltation, triplicity, term and face rulers of its degree, its detriment and fall rulers, and its own score, with p for peregrine</td><td>essdig.alm</td></tr>
+<tr><td>Further Dignities</td><td>Tabulation</td><td>Sect, planetary hour and day, hyleg, mutual receptions, horary considerations and lunar aspects on one page</td><td>Several</td></tr>
+<tr><td>Rulerships report</td><td>Reports &gt; Current Chart</td><td>Planets accidentally dignified, in mutual reception, rulership, detriment, exaltation and fall; final dispositor; each point's sign, house, houses ruled and dispositor</td><td>Selected rulership set</td></tr>
+<tr><td>Mutual Receptions</td><td>Page object</td><td>Receptions and cross-receptions, by rulership, exaltation, triplicity, term and face</td><td>essdig.alm</td></tr>
+<tr class="grp"><td colspan="4">Almutens</td></tr>
+<tr><td>House Cusps (almutens)</td><td>Tabulation; House Almutens object; Horary report</td><td>The degree almuten of every house cusp</td><td>house.alm</td></tr>
+<tr><td>Almuten Scores</td><td>Tabulation; Dignity/Almuten object</td><td>Planet rankings and scores for each definition in the file, e.g. the almuten of the chart</td><td>general.alm (or your own .alm)</td></tr>
+<tr class="grp"><td colspan="4">Hylegs</td></tr>
+<tr><td>Chart Hylegs</td><td>Page object; Horary report; Further Dignities</td><td>The hyleg and its longitude by Bonatti/Lehman, Omar/Bonatti and Ptolemy</td><td>hyleg.alm, hyleg.asp</td></tr>
+<tr class="grp"><td colspan="4">Sect and horary</td></tr>
+<tr><td>Planetary Sects</td><td>Page object</td><td>Chart sect, and each planet's sect by placement and sign; In Hayz and Ex Conditione</td><td>Chart only</td></tr>
+<tr><td>Planetary Hour/Day</td><td>Page object; Horary report</td><td>Planet of the day and hour, which unequal hour it is, time to the next</td><td>Chart only</td></tr>
+<tr><td>Planetary Hours</td><td>Tabulation; Planetary Hours of Day object</td><td>Every planetary hour from dawn to dawn on the chart's date</td><td>Chart only</td></tr>
+<tr><td>Horary Considerations</td><td>Page object</td><td>Void Moon, via combusta (Moon or Ascendant), early or late Ascendant, Saturn in the 7th, Moon fast or slow</td><td>Chart only</td></tr>
+<tr><td>Temperaments</td><td>Tabulation</td><td>Choleric, sanguine, melancholic, phlegmatic, weighted after Lilly from Sun, Moon, Ascendant and aspects to the lights</td><td>Built in (Lehman's data)</td></tr>
+<tr class="grp"><td colspan="4">Time lords</td></tr>
+<tr><td>Firdaria (and variant)</td><td>Tabulation; page object</td><td>Planetary periods and sub-periods with start dates and ages; the variant moves the nodes for night charts</td><td>Chart only</td></tr>
+<tr><td>Direction of Divisions</td><td>Tabulation; page object</td><td>Term periods by primary direction of the Ascendant through the bounds</td><td>Term type of the chosen .alm; primary rate key</td></tr>
+<tr><td>Zodiacal Releasing</td><td>Tabulation</td><td>Releasing periods (four levels) from the Lot of Spirit or Fortune, with loosing of the bond marked LOB</td><td>Start lot chosen on the tab</td></tr>
+<tr><td>Annual profection</td><td>Chart &gt; Tran/Prog/Dirn; dynamic reports</td><td>The chart turned one sign a year; the profected Ascendant gives the lord of the year</td><td>Chart only</td></tr>
+<tr class="grp"><td colspan="4">Editors and settings</td></tr>
+<tr><td>Dignity/Almuten Editor</td><td>Utilities &gt; Dignity/Almuten Editor</td><td>Edits any .alm file: scores, scheme, points summed, house options</td><td>—</td></tr>
+<tr><td>Rulerships and Weightings Editor</td><td>Utilities &gt; Edit Rulers/Weightings</td><td>Edits rulership sets (Modern, Old, Esoteric, Hierarchical) and point weightings</td><td>—</td></tr>
+<tr><td>Part of Fortune formula</td><td>Preferences &gt; Edit Settings &gt; Calculations</td><td>Day/night reversal or the fixed day formula</td><td>—</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2 id="files">The .alm files</h2>
+<p>Every dignity score in Solar Fire comes from a definition file of type <code>.alm</code>, edited in <span class="menu">Utilities &gt; Dignity/Almuten Editor</span>. Knowing which file feeds which table is the key to changing anything.</p>
+<ul>
+<li><strong>essdig.alm</strong> drives the Essential Dignities table, the Horary report's dignity columns and mutual receptions. One definition.</li>
+<li><strong>house.alm</strong> drives house-cusp almutens. One definition.</li>
+<li><strong>general.alm</strong> drives the Dignity/Almuten page object and Almuten Scores tabulation. It holds several definitions, each one a different almuten calculation; the page object needs three data lines per definition (name, ranked planets, scores).</li>
+<li><strong>hyleg.alm</strong> (with the aspect set <strong>hyleg.asp</strong>) drives the hyleg calculations.</li>
+</ul>
+<p>essdig, house and hyleg must stay in Solar Fire's program folder. Your own definition files go in the <em>Almutens &amp; Dignities</em> folder of Solar Fire User Files, and a page object can be pointed at one of them instead of the default. To try another scheme without losing the original, open the file, use <span class="menu">File &gt; Save As</span>, and edit the copy.</p>
+<p><strong>Changing the triplicity scheme</strong> (for example to Dorothean): open the Dignity/Almuten Editor, open <code>essdig.alm</code>, click <strong>Options</strong>, choose the triplicity type, OK, then <span class="menu">File &gt; Save</span>. Do the same in <code>house.alm</code> so the house almutens match. Reopen the chart to see new scores.</p>
+
+<h2 id="scoring">Scoring</h2>
+<p>Each definition gives points for each kind of dignity. These are the items you can score, and what each means. Any score set to 0 is left out.</p>
+<div class="tablewrap">
+<table>
+<thead><tr><th>Item</th><th>Scores a planet that is…</th><th>Lilly's score</th></tr></thead>
+<tbody>
+<tr><td>In Rulership</td><td>in a sign it rules (domicile)</td><td>+5</td></tr>
+<tr><td>In Exaltation</td><td>in its sign of exaltation</td><td>+4</td></tr>
+<tr><td>In Triplicity (In Sect)</td><td>the triplicity ruler of its element for the chart's sect</td><td>+3</td></tr>
+<tr><td>In Triplicity (Out Sect)</td><td>the triplicity ruler for the other sect</td><td>(optional)</td></tr>
+<tr><td>In Triplicity (Extra)</td><td>the participating (third) triplicity ruler</td><td>(optional)</td></tr>
+<tr><td>In Term</td><td>in its own term (bound)</td><td>+2</td></tr>
+<tr><td>In Face</td><td>in its own face (decan)</td><td>+1</td></tr>
+<tr><td>In Detriment</td><td>in the sign opposite its domicile</td><td>−5</td></tr>
+<tr><td>In Fall</td><td>in the sign opposite its exaltation</td><td>−4</td></tr>
+<tr><td>In Peregrine</td><td>without rulership, exaltation, triplicity, term or face (optionally: and no mutual reception)</td><td>−5</td></tr>
+<tr><td>In MR (by each dignity)</td><td>in mutual reception by rulership, exaltation, triplicity, term or face</td><td>(optional)</td></tr>
+<tr><td>Planet of Day / of Hour</td><td>the day ruler or hour ruler (for almutens)</td><td>(almutens only)</td></tr>
+<tr><td>In House 1–12</td><td>in a given house, with optional forward offsets near cusps (for almutens)</td><td>(almutens only)</td></tr>
+</tbody>
+</table>
+</div>
+<p>A definition is either <strong>Degree Dignities</strong> (the dignities at one position: a planet's own score, or every planet's score at a cusp, which gives that cusp's almuten) or <strong>Almuten – Sum over Points</strong> (each planet's dignities summed over several positions; the top scorer is the almuten). It can also be limited to day or night charts, so you can keep separate day and night definitions.</p>
+<p>The <strong>Options</strong> button sets the rulership set, triplicity and term type, whether signs start at 0° or 1° (which only shifts the terms), the house system and cusp offsets used for house scoring, and the Part of Fortune formula for almutens.</p>
+
+<h2 id="schemes">Triplicities, terms and faces</h2>
+<h3>Triplicity rulers</h3>
+<p>Solar Fire offers three schemes. D = day ruler, N = night ruler, P = participating.</p>
+<div class="tablewrap">
+<table>
+<thead><tr><th>Element</th><th>Ptolemy (D / N / P)</th><th>Lilly (D / N)</th><th>Dorothean (D / N / P)</th></tr></thead>
+<tbody>
+<tr><td>Fire</td><td>Sun / Jupiter / Mars</td><td>Sun / Jupiter</td><td>Sun / Jupiter / Saturn</td></tr>
+<tr><td>Earth</td><td>Venus / Moon / Saturn</td><td>Venus / Moon</td><td>Venus / Moon / Mars</td></tr>
+<tr><td>Air</td><td>Saturn / Mercury / Jupiter</td><td>Saturn / Mercury</td><td>Saturn / Mercury / Jupiter</td></tr>
+<tr><td>Water</td><td>Venus / Moon / Mars</td><td>Mars / Mars</td><td>Venus / Mars / Moon</td></tr>
+</tbody>
+</table>
+</div>
+<p>Dorothean is the Hellenistic scheme, with all three rulers in use. Lilly's is the one used in his horary, with Mars ruling water by day and night. Solar Fire's hyleg definitions default to Dorothean (Bonatti/Lehman and Omar) and Ptolemy (Ptolemy's method).</p>
+
+<h3>Terms (bounds)</h3>
+<p>Each sign is split into five unequal terms, each ruled by one of the five non-luminary planets. The number is the degree where the term ends: Jupiter 6 means 0°00′–5°59′.</p>
+<p><strong>Egyptian terms</strong> (the Hellenistic standard, and the default for Bonatti/Lehman hylegs):</p>
+<div class="tablewrap"><table class="terms"><thead><tr><th>Sign</th><th>1st</th><th>2nd</th><th>3rd</th><th>4th</th><th>5th</th></tr></thead><tbody><tr><td>Aries</td><td>Jupiter <span class="deg">0–6</span></td><td>Venus <span class="deg">6–12</span></td><td>Mercury <span class="deg">12–20</span></td><td>Mars <span class="deg">20–25</span></td><td>Saturn <span class="deg">25–30</span></td></tr><tr><td>Taurus</td><td>Venus <span class="deg">0–8</span></td><td>Mercury <span class="deg">8–14</span></td><td>Jupiter <span class="deg">14–22</span></td><td>Saturn <span class="deg">22–27</span></td><td>Mars <span class="deg">27–30</span></td></tr><tr><td>Gemini</td><td>Mercury <span class="deg">0–6</span></td><td>Jupiter <span class="deg">6–12</span></td><td>Venus <span class="deg">12–17</span></td><td>Mars <span class="deg">17–24</span></td><td>Saturn <span class="deg">24–30</span></td></tr><tr><td>Cancer</td><td>Mars <span class="deg">0–7</span></td><td>Venus <span class="deg">7–13</span></td><td>Mercury <span class="deg">13–19</span></td><td>Jupiter <span class="deg">19–26</span></td><td>Saturn <span class="deg">26–30</span></td></tr><tr><td>Leo</td><td>Jupiter <span class="deg">0–6</span></td><td>Venus <span class="deg">6–11</span></td><td>Saturn <span class="deg">11–18</span></td><td>Mercury <span class="deg">18–24</span></td><td>Mars <span class="deg">24–30</span></td></tr><tr><td>Virgo</td><td>Mercury <span class="deg">0–7</span></td><td>Venus <span class="deg">7–17</span></td><td>Jupiter <span class="deg">17–21</span></td><td>Mars <span class="deg">21–28</span></td><td>Saturn <span class="deg">28–30</span></td></tr><tr><td>Libra</td><td>Saturn <span class="deg">0–6</span></td><td>Mercury <span class="deg">6–14</span></td><td>Jupiter <span class="deg">14–21</span></td><td>Venus <span class="deg">21–28</span></td><td>Mars <span class="deg">28–30</span></td></tr><tr><td>Scorpio</td><td>Mars <span class="deg">0–7</span></td><td>Venus <span class="deg">7–11</span></td><td>Mercury <span class="deg">11–19</span></td><td>Jupiter <span class="deg">19–24</span></td><td>Saturn <span class="deg">24–30</span></td></tr><tr><td>Sagittarius</td><td>Jupiter <span class="deg">0–12</span></td><td>Venus <span class="deg">12–17</span></td><td>Mercury <span class="deg">17–21</span></td><td>Saturn <span class="deg">21–26</span></td><td>Mars <span class="deg">26–30</span></td></tr><tr><td>Capricorn</td><td>Mercury <span class="deg">0–7</span></td><td>Jupiter <span class="deg">7–14</span></td><td>Venus <span class="deg">14–22</span></td><td>Saturn <span class="deg">22–26</span></td><td>Mars <span class="deg">26–30</span></td></tr><tr><td>Aquarius</td><td>Mercury <span class="deg">0–7</span></td><td>Venus <span class="deg">7–13</span></td><td>Jupiter <span class="deg">13–20</span></td><td>Mars <span class="deg">20–25</span></td><td>Saturn <span class="deg">25–30</span></td></tr><tr><td>Pisces</td><td>Venus <span class="deg">0–12</span></td><td>Jupiter <span class="deg">12–16</span></td><td>Mercury <span class="deg">16–19</span></td><td>Mars <span class="deg">19–28</span></td><td>Saturn <span class="deg">28–30</span></td></tr></tbody></table></div>
+<p><strong>Ptolemaic terms</strong> (also called Chaldean in Lilly's translation; Lilly's own default):</p>
+<div class="tablewrap"><table class="terms"><thead><tr><th>Sign</th><th>1st</th><th>2nd</th><th>3rd</th><th>4th</th><th>5th</th></tr></thead><tbody><tr><td>Aries</td><td>Jupiter <span class="deg">0–6</span></td><td>Venus <span class="deg">6–14</span></td><td>Mercury <span class="deg">14–21</span></td><td>Mars <span class="deg">21–26</span></td><td>Saturn <span class="deg">26–30</span></td></tr><tr><td>Taurus</td><td>Venus <span class="deg">0–8</span></td><td>Mercury <span class="deg">8–15</span></td><td>Jupiter <span class="deg">15–22</span></td><td>Saturn <span class="deg">22–26</span></td><td>Mars <span class="deg">26–30</span></td></tr><tr><td>Gemini</td><td>Mercury <span class="deg">0–7</span></td><td>Jupiter <span class="deg">7–14</span></td><td>Venus <span class="deg">14–21</span></td><td>Saturn <span class="deg">21–25</span></td><td>Mars <span class="deg">25–30</span></td></tr><tr><td>Cancer</td><td>Mars <span class="deg">0–6</span></td><td>Jupiter <span class="deg">6–13</span></td><td>Mercury <span class="deg">13–20</span></td><td>Venus <span class="deg">20–27</span></td><td>Saturn <span class="deg">27–30</span></td></tr><tr><td>Leo</td><td>Saturn <span class="deg">0–6</span></td><td>Mercury <span class="deg">6–13</span></td><td>Venus <span class="deg">13–19</span></td><td>Jupiter <span class="deg">19–25</span></td><td>Mars <span class="deg">25–30</span></td></tr><tr><td>Virgo</td><td>Mercury <span class="deg">0–7</span></td><td>Venus <span class="deg">7–13</span></td><td>Jupiter <span class="deg">13–18</span></td><td>Saturn <span class="deg">18–24</span></td><td>Mars <span class="deg">24–30</span></td></tr><tr><td>Libra</td><td>Saturn <span class="deg">0–6</span></td><td>Venus <span class="deg">6–11</span></td><td>Jupiter <span class="deg">11–19</span></td><td>Mercury <span class="deg">19–24</span></td><td>Mars <span class="deg">24–30</span></td></tr><tr><td>Scorpio</td><td>Mars <span class="deg">0–6</span></td><td>Jupiter <span class="deg">6–14</span></td><td>Venus <span class="deg">14–21</span></td><td>Mercury <span class="deg">21–27</span></td><td>Saturn <span class="deg">27–30</span></td></tr><tr><td>Sagittarius</td><td>Jupiter <span class="deg">0–8</span></td><td>Venus <span class="deg">8–14</span></td><td>Mercury <span class="deg">14–19</span></td><td>Saturn <span class="deg">19–25</span></td><td>Mars <span class="deg">25–30</span></td></tr><tr><td>Capricorn</td><td>Venus <span class="deg">0–6</span></td><td>Mercury <span class="deg">6–12</span></td><td>Jupiter <span class="deg">12–19</span></td><td>Mars <span class="deg">19–25</span></td><td>Saturn <span class="deg">25–30</span></td></tr><tr><td>Aquarius</td><td>Saturn <span class="deg">0–6</span></td><td>Mercury <span class="deg">6–12</span></td><td>Venus <span class="deg">12–20</span></td><td>Jupiter <span class="deg">20–25</span></td><td>Mars <span class="deg">25–30</span></td></tr><tr><td>Pisces</td><td>Venus <span class="deg">0–8</span></td><td>Jupiter <span class="deg">8–14</span></td><td>Mercury <span class="deg">14–20</span></td><td>Mars <span class="deg">20–26</span></td><td>Saturn <span class="deg">26–30</span></td></tr></tbody></table></div>
+
+<h3>Faces (decans)</h3>
+<p>Each sign is split into three 10° faces, ruled in Chaldean order (Saturn, Jupiter, Mars, Sun, Venus, Mercury, Moon) starting with Mars at 0° Aries.</p>
+<div class="tablewrap"><table class="terms"><thead><tr><th>Sign</th><th>0–10°</th><th>10–20°</th><th>20–30°</th></tr></thead><tbody><tr><td>Aries</td><td>Mars</td><td>Sun</td><td>Venus</td></tr><tr><td>Taurus</td><td>Mercury</td><td>Moon</td><td>Saturn</td></tr><tr><td>Gemini</td><td>Jupiter</td><td>Mars</td><td>Sun</td></tr><tr><td>Cancer</td><td>Venus</td><td>Mercury</td><td>Moon</td></tr><tr><td>Leo</td><td>Saturn</td><td>Jupiter</td><td>Mars</td></tr><tr><td>Virgo</td><td>Sun</td><td>Venus</td><td>Mercury</td></tr><tr><td>Libra</td><td>Moon</td><td>Saturn</td><td>Jupiter</td></tr><tr><td>Scorpio</td><td>Mars</td><td>Sun</td><td>Venus</td></tr><tr><td>Sagittarius</td><td>Mercury</td><td>Moon</td><td>Saturn</td></tr><tr><td>Capricorn</td><td>Jupiter</td><td>Mars</td><td>Sun</td></tr><tr><td>Aquarius</td><td>Venus</td><td>Mercury</td><td>Moon</td></tr><tr><td>Pisces</td><td>Saturn</td><td>Jupiter</td><td>Mars</td></tr></tbody></table></div>
+
+<h2 id="almutens">Almutens</h2>
+<p>An <strong>almuten</strong> is the planet with the most dignity at a place, or over a set of places. Solar Fire computes three kinds.</p>
+<ul>
+<li><strong>Degree almuten</strong> of one position: add each planet's dignities there. The manual's example: at 28° Libra by day, Venus rules, Saturn is exalted and the day triplicity ruler, Mars has the term and Jupiter the face, so Saturn scores highest and is the almuten of that degree.</li>
+<li><strong>House almutens</strong>: the degree almuten of each cusp (from house.alm). Read the almuten of a house as its strongest significator, alongside its sign ruler. Where they differ, the almuten shows who really has authority over that house's affairs.</li>
+<li><strong>Almuten of the chart</strong> (Almuten Scores, from general.alm): sums each planet's dignities at several key places. Ibn Ezra's version uses the Sun, Moon, Ascendant, Part of Fortune and prenatal syzygy. Some versions add planet of the day and hour and house position. The winner is read as the ruling planet of the nativity, the significator of the person's character.</li>
+</ul>
+<p>To build your own: in the editor add a definition, choose <strong>Almuten – Sum over Points</strong>, click <strong>Selected Points</strong>, and add the points to sum (chart points, cusps, prenatal syzygy positions, Arabic parts). Each point can use its <em>own position</em> or that of its dispositor, triplicity ruler, term ruler or face ruler. For a part with day and night formulas, add both; Solar Fire uses the one that fits the chart.</p>
+<p><strong>Minimum Honors</strong> stops a planet becoming almuten unless it has at least that many dignities (honours) there; at present only hyleg.alm uses it.</p>
+
+<h2 id="hylegs">Hylegs</h2>
+<p>The <strong>hyleg</strong> (apheta, giver of life) is the point that stands for the native's vitality, used in length-of-life and health work. Solar Fire computes three methods, each with its own rules. Edit hyleg.alm and hyleg.asp to change scores, orbs and offsets.</p>
+<div class="tablewrap">
+<table>
+<thead><tr><th>Method</th><th>How Solar Fire decides</th><th>Default scheme</th></tr></thead>
+<tbody>
+<tr><td>Bonatti/Lehman</td><td>Sun in 1st, 10th or 11th (or in 7th–9th in a masculine sign); else Moon in a feminine sign, not cadent; else, in a waxing (conjunctional) chart, Ascendant, then Fortune, then the prenatal new Moon, if a ruler of that place aspects it; in a waning (preventional) chart, Fortune, then Ascendant, then the prenatal full Moon. May find no hyleg.</td><td>Dorothean triplicities, Egyptian terms, 8/5/3° cusp offsets; scores 5/4/3/2, face 0</td></tr>
+<tr><td>Omar/Bonatti</td><td>As above, but the Sun or Moon qualifies only if one of its own rulers (domicile, exaltation, triplicity or term) aspects it. May find no hyleg.</td><td>As above</td></tr>
+<tr><td>Ptolemy</td><td>By day the Sun, then the Moon, if in an aphetic house (1st, 7th, 9th, 10th, 11th); by night the Moon first. Else the almuten (minimum 3 honours) of Sun, Ascendant and prenatal new Moon by day, or Moon, Fortune and prenatal full Moon by night; else the Ascendant if the Moon is waxing, Fortune if waning. Always finds one.</td><td>Ptolemy triplicities and terms, 5° cusp offsets; scores 5/4/3/2/1</td></tr>
+</tbody>
+</table>
+</div>
+<p>The methods often disagree; compare them, check each candidate's condition, and use the one whose rules you follow. The prenatal syzygy used here can be cast as a chart from <span class="menu">Chart &gt; Lunar Phase</span>.</p>
+
+<h2 id="sect">Sect, receptions and horary</h2>
+<ul>
+<li><strong>Planetary Sects</strong>: <em>Cht</em> is the chart's sect (Sun above or below the horizon), <em>Plc</em> whether the planet is on the Sun's side of the horizon, <em>Sgn</em> whether its sign is masculine (diurnal) or feminine (nocturnal). A planet whose own sect matches all three is <strong>in hayz</strong>, a strong accidental dignity; one contrary on all three is <strong>ex conditione</strong>.</li>
+<li><strong>Mutual Receptions</strong> lists receptions in order rulership, exaltation, triplicity, term, face. In the Essential Dignities table an <strong>m</strong> marks a reception for that dignity, <strong>+</strong> the planet's own dignity and <strong>−</strong> its detriment or fall.</li>
+<li><strong>Planetary Hour/Day</strong> uses unequal hours: day and night each divided into twelve. The hour ruler agreeing with the querent's significator is a traditional test of a horary's radicality.</li>
+<li><strong>Horary Considerations</strong> are the classical cautions before judgement (strictures): void Moon, via combusta, Ascendant too early or late, Saturn in the 7th, and the Moon's speed. "None" means none apply.</li>
+</ul>
+
+<h2 id="timelords">Time lords</h2>
+<ul>
+<li><strong>Firdaria</strong>: planetary periods of fixed length (the Sun's 10 years, Venus 8, Mercury 13, Moon 9, Saturn 11, Jupiter 12, Mars 7, then the nodes) starting from the Sun by day or the Moon by night, each split into seven sub-periods. Read the period lord's natal condition and its relation to the sub-lord. The variant changes where the nodes fall for night charts.</li>
+<li><strong>Direction of Divisions</strong> (term directions): the Ascendant directed through the terms by primary motion; each term ruler governs a stretch of life. Solar Fire uses Placidian (mundane) directions with your chosen rate key; the term type comes from the first definition of the .alm file the object uses.</li>
+<li><strong>Zodiacal Releasing</strong>: sign-based periods released from the Lot of Spirit (career, action) or Fortune (body, circumstances). Level 1 gives chapters of years; click a date to drill down to levels 2–4. Loosing of the bond (LOB) marks a turning point within a period.</li>
+<li><strong>Annual profection</strong>: one sign per year from the Ascendant; the ruler of the profected sign is lord of the year, and transits and returns to it are emphasised.</li>
+</ul>
+
+<h2 id="rulerships">Rulership sets</h2>
+<p>Solar Fire ships four rulership sets, all editable in the Rulerships and Weightings Editor. Dignity scoring uses whichever set the .alm options name; for traditional work make sure that is <strong>Old</strong> (traditional) rulers.</p>
+<div class="tablewrap">
+<table>
+<thead><tr><th>Sign</th><th>Modern</th><th>Old</th><th>Esoteric</th><th>Hierarchical</th><th>Exalted</th><th>Fall</th></tr></thead>
+<tbody>
+<tr><td>Aries</td><td>Mars</td><td>Mars</td><td>Mercury</td><td>Uranus</td><td>Sun</td><td>Saturn</td></tr>
+<tr><td>Taurus</td><td>Venus</td><td>Venus</td><td>Vulcan</td><td>Vulcan</td><td>Moon</td><td>Uranus</td></tr>
+<tr><td>Gemini</td><td>Mercury</td><td>Mercury</td><td>Venus</td><td>Earth</td><td>–</td><td>–</td></tr>
+<tr><td>Cancer</td><td>Moon</td><td>Moon</td><td>Neptune</td><td>Neptune</td><td>Jupiter</td><td>Mars</td></tr>
+<tr><td>Leo</td><td>Sun</td><td>Sun</td><td>Sun</td><td>Sun</td><td>–</td><td>–</td></tr>
+<tr><td>Virgo</td><td>Mercury</td><td>Mercury</td><td>Moon</td><td>Jupiter</td><td>Mercury</td><td>Venus</td></tr>
+<tr><td>Libra</td><td>Venus</td><td>Venus</td><td>Uranus</td><td>Saturn</td><td>Saturn</td><td>Sun</td></tr>
+<tr><td>Scorpio</td><td>Pluto</td><td>Mars</td><td>Mars</td><td>Mercury</td><td>Uranus</td><td>Moon</td></tr>
+<tr><td>Sagittarius</td><td>Jupiter</td><td>Jupiter</td><td>Earth</td><td>Mars</td><td>–</td><td>–</td></tr>
+<tr><td>Capricorn</td><td>Saturn</td><td>Saturn</td><td>Saturn</td><td>Venus</td><td>Mars</td><td>Jupiter</td></tr>
+<tr><td>Aquarius</td><td>Uranus</td><td>Saturn</td><td>Jupiter</td><td>Moon</td><td>–</td><td>–</td></tr>
+<tr><td>Pisces</td><td>Neptune</td><td>Jupiter</td><td>Pluto</td><td>Pluto</td><td>Venus</td><td>Mercury</td></tr>
+</tbody>
+</table>
+</div>
+<p class="note">The default exaltation column adds Uranus exalted in Scorpio and in fall in Taurus, which traditional astrology doesn't use. If it turns up in your scores, edit the Old set in the Rulerships and Weightings Editor to leave Scorpio and Taurus with only the Moon's exaltation and fall.</p>
+<p><strong>Weightings</strong> (same editor) set how much each point counts in element, mode and ray balances: 3 for Sun, Moon, Ascendant and MC, 2 for Mercury, Venus and Mars, 1 for Jupiter to Pluto, 0 for everything else. They don't affect dignity scores.</p>
+
+<h2 id="reading">Reading the scores</h2>
+<ul>
+<li><strong>The score is a summary, not the judgement.</strong> +5 in domicile and +5 from triplicity plus term plus face are different conditions: the first is a planet at home with full authority; the second a guest with several minor claims. Read the columns, not just the total.</li>
+<li><strong>Peregrine</strong> (p) means no essential dignity at all: the planet acts without resources of its own and depends on its dispositor and on reception. A peregrine planet in reception is far better off than one without.</li>
+<li><strong>Detriment and fall</strong> describe a planet acting against its nature or out of favour, not simply "bad". Look at its dispositor's condition, and at receptions, which can repair it.</li>
+<li><strong>Combine essential with accidental dignity.</strong> House (angular, succedent, cadent), speed, direction, combustion and sect are not in the essential score; the Rulerships report and Planetary Sects object cover some of them.</li>
+<li><strong>Follow dispositorship.</strong> The final dispositor (Rulerships report) and the almuten of the chart point to the planets that carry the whole nativity.</li>
+<li><strong>Check the scheme.</strong> If a score surprises you, look at which triplicity and term table produced it: a planet may have a term by Egyptian bounds and none by Ptolemaic.</li>
+</ul>
+
+<footer>
+<p>Sources: the Solar Fire X User Guide, topics 10.12 <a href="https://alabe.com/SFXManual/editing_a_dignityalmuten_file.html">Editing a Dignity/Almuten File</a>, 10.5 <a href="https://alabe.com/SFXManual/changing_rulerships_and_weightings.html">Changing Rulerships and Weightings</a>, <a href="https://alabe.com/SFXManual/chart_hylegs.html">Chart Hylegs</a>, <a href="https://alabe.com/SFXManual/dignities_ancient.html">Dignities &amp; Ancient</a> page objects, and <a href="https://alabe.com/SFXManual/descriptions_of_the_tabulations.html">Descriptions of the Tabulations</a>. An independent study aid, not affiliated with Astrolabe.</p>
+<p><a href="../">Back to the study plan</a></p>
+</footer>
+</main>
+<script src="guide.js"></script>
+</body>
+</html>

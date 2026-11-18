@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Every line type, overlay, dynamic chart and report in Solar Maps (Solar Fire X astrocartography), what each one shows and how it's read. A companion to Modules 18 and 18b of the Solar Fire X Study Plan.">
+<meta property="og:title" content="Solar Fire X Solar Maps Line Types Guide">
+<meta property="og:description" content="Every Solar Maps line type, overlay and report: planet/angle lines, parans, local space, geodetic, eclipse paths and CycloCartoGraphy.">
+<meta property="og:image" content="https://aamanlamba.github.io/solar-fire-x-study/og-image.png">
+<title>Solar Maps Lines Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="guide.css">
+</head>
+<body>
+<main>
+<a class="back" href="../#m18">← Solar Fire X Study Plan</a>
+<p class="kicker">Companion to Modules 18 and 18b</p>
+<h1>Solar Maps Line Types Guide</h1>
+<p class="lede">Every line, overlay, time-varying chart and report in Solar Maps, the astrocartography part of Solar Fire X, with what each shows on the map and how it's read.</p>
+<nav class="toc" aria-label="Sections">
+<a href="#quick-reference">Quick reference</a>
+<a href="#angle-lines">Planet/angle lines</a>
+<a href="#reading">Reading angle lines</a>
+<a href="#parans">Paran lines</a>
+<a href="#local-space">Local space</a>
+<a href="#celestial">Celestial and geodetic</a>
+<a href="#dynamic">Lines over time</a>
+<a href="#reports">Reports</a>
+<a href="#workflow">A working method</a>
+</nav>
+
+<h2 id="quick-reference">Quick reference</h2>
+<p>Lines are switched on in the Select Lines dialog: <span class="menu">Chart &gt; Displayed Lines</span> or the <strong>Lines</strong> button above the map. Double-click empty space in a category's frame to switch that whole category on or off.</p>
+<label class="filter">Filter <input id="q" type="search" placeholder="e.g. paran, rising, eclipse" autocomplete="off"></label>
+<div class="tablewrap">
+<table id="ref">
+<thead><tr><th>Line or overlay</th><th>Where</th><th>What it shows</th><th>Use it for</th></tr></thead>
+<tbody>
+<tr class="grp"><td colspan="4">Planet/angle lines – In Mundo (Astro*Carto*Graphy)</td></tr>
+<tr><td>Culminate (MC)</td><td>Select Lines</td><td>Where the body crosses the upper meridian; somewhere on it, it's overhead. A line of longitude</td><td>Career, reputation, public life</td></tr>
+<tr><td>Anticulminate (IC)</td><td>Select Lines</td><td>Where the body crosses the lower meridian. A line of longitude</td><td>Home, family, roots, private life</td></tr>
+<tr><td>Rise (ASC)</td><td>Select Lines</td><td>Where the body is rising. A curved great circle</td><td>Self, body, how you come across</td></tr>
+<tr><td>Set (DSC)</td><td>Select Lines</td><td>Where the body is setting. A curved great circle</td><td>Partners, clients, open enemies</td></tr>
+<tr class="grp"><td colspan="4">Planet/angle lines – Zodiacal</td></tr>
+<tr><td>MC / IC / Asc / Dsc lines</td><td>Select Lines, Zodiacal</td><td>Where the body's longitude is exactly on that angle of a relocated chart</td><td>Matching lines to relocated wheels</td></tr>
+<tr><td>Aspect lines</td><td>Select Lines &gt; Add Aspects</td><td>Where a body squares, trines, sextiles (etc.) an angle</td><td>Regional maps only</td></tr>
+<tr><td>Midpoint lines</td><td>Select Lines &gt; Add Midpoints</td><td>Where a midpoint of two displayed points is on an angle</td><td>Regional maps only</td></tr>
+<tr class="grp"><td colspan="4">Paran lines</td></tr>
+<tr><td>Rise/Set to Rise/Set</td><td>Select Lines</td><td>Latitudes where two bodies rise or set together, or one rises as the other sets</td><td>Latitude bands of a planetary pairing</td></tr>
+<tr><td>Rise/Set to Culm/Anti</td><td>Select Lines</td><td>Latitudes where one body rises or sets as another culminates or anti-culminates</td><td>The crossings of angle lines, extended around the globe</td></tr>
+<tr><td>Parans Only Of…</td><td>Select Lines</td><td>Parans of one point (planet or star) with all the others</td><td>Keeping the map readable</td></tr>
+<tr><td>Custom parans</td><td>Paran (asterisk) mouse mode</td><td>Click a crossing to add its paran line, or a paran line to remove it; save sets as .paran files</td><td>Picking the parans that matter</td></tr>
+<tr><td>Limit of Lat</td><td>Select Lines</td><td>Hides parans beyond 45–90° north and south</td><td>60° keeps out the polar clutter</td></tr>
+<tr class="grp"><td colspan="4">Local space</td></tr>
+<tr><td>Planet Directions</td><td>Select Lines</td><td>The compass direction (azimuth) of each body from the chart's place, continued around the globe</td><td>Directions from home; Erlewine's local space</td></tr>
+<tr><td>Local Horizon</td><td>Select Lines</td><td>The boundary between where bodies are above and below the horizon for this chart</td><td>Visibility</td></tr>
+<tr><td>Local Houses</td><td>Select Lines</td><td>Twelve 30° azimuth sectors, 1st cusp due east</td><td>Local space houses</td></tr>
+<tr><td>Keep original azimuths</td><td>Select Lines</td><td>After relocating, draws the natal directions from the new place</td><td>Carrying your directions with you</td></tr>
+<tr><td>Local Horizon Chart</td><td>Chart &gt; View Local Horizon Chart</td><td>A compass wheel of azimuth lines to print on a transparency</td><td>Overlaying a street or regional map</td></tr>
+<tr class="grp"><td colspan="4">Celestial and projection</td></tr>
+<tr><td>Ecliptic</td><td>Select Lines</td><td>Where the ecliptic is overhead</td><td>Orientation</td></tr>
+<tr><td>Zodiacal Signs</td><td>Select Lines</td><td>The sign boundaries projected onto the Earth</td><td>Which sign is overhead</td></tr>
+<tr><td>Geodetic zodiac</td><td>Chart &gt; Zodiac &gt; Geodetic</td><td>Signs as bands of longitude, 0° Aries at Greenwich (or your chosen start, east or west)</td><td>Mundane work; charts without a birth time</td></tr>
+<tr><td>Day/Night Shading</td><td>Chart menu</td><td>The half of the world in darkness at the chart moment (whole-world map)</td><td>Sect; with the AstroClock, the moving terminator</td></tr>
+<tr><td>Eclipse paths</td><td>Solar Maps eclipse tools</td><td>The track of totality and lines of partial magnitude of a solar eclipse</td><td>Where an eclipse falls hardest</td></tr>
+<tr><td>Fixed stars</td><td>Open a star file</td><td>Angle and paran lines for up to 36 stars at a time</td><td>Star lines and star parans</td></tr>
+<tr class="grp"><td colspan="4">Lines over time</td></tr>
+<tr><td>Transits</td><td>Chart &gt; Subsidiary Chart</td><td>Transiting planets against the natal angles</td><td>Where a transit is active now</td></tr>
+<tr><td>Secondary / tertiary progressions</td><td>Chart &gt; Subsidiary Chart</td><td>Progressed planets against the natal angles</td><td>Slow shifts in your lines</td></tr>
+<tr><td>Sec.Prog + Transits (CCG)</td><td>Chart &gt; Subsidiary Chart</td><td>Progressed Sun to Mars with transiting Jupiter to Pluto (Cyclo*Carto*Graphy)</td><td>Jim Lewis's timing method</td></tr>
+<tr><td>Solar arc directions</td><td>Chart &gt; Subsidiary Chart</td><td>Solar-arc directed planets against the natal angles</td><td>Directed lines</td></tr>
+<tr><td>Animation and AstroClock</td><td>Chart menu</td><td>Lines moving through time; the AstroClock shows the sky now</td><td>Watching lines sweep across places</td></tr>
+<tr class="grp"><td colspan="4">Reports</td></tr>
+<tr><td>Map Parans</td><td>Reports</td><td>Paran latitudes mixed with cities, north to south, within the map and latitude limit</td><td>Which cities sit on which paran</td></tr>
+<tr><td>Local Parans</td><td>Reports</td><td>The same, within 2° of the chart's latitude</td><td>Parans where you live</td></tr>
+<tr><td>City Directions</td><td>Reports</td><td>Cities on or opposite each local space line, with orb</td><td>Places in a planet's direction</td></tr>
+<tr><td>Relocation Interpretations</td><td>Reports</td><td>A written report for a chosen city: planets on angles, local space and paran lines</td><td>A client write-up</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2 id="angle-lines">Planet/angle lines</h2>
+<p>These are the core astrocartography lines: where on Earth, at the birth moment, each body was on one of the four angles. Solar Maps draws them two ways and you choose one at a time in Select Lines.</p>
+<ul>
+<li><strong>In Mundo</strong> uses right ascension and declination: the body actually rising, culminating, setting or anti-culminating. This is Jim Lewis's Astro*Carto*Graphy.</li>
+<li><strong>Zodiacal</strong> uses ecliptic longitude: the body's degree is on the Ascendant, MC and so on of a chart relocated there. It matches what you see in a relocated wheel.</li>
+</ul>
+<p>The MC and IC lines are the same either way and run north–south. The rising and setting lines differ for bodies far from the ecliptic (Pluto, many asteroids, most stars), and curve on flat map projections because they're great circles. In mundo, midpoints and aspect lines use right ascension; zodiacal ones use longitude.</p>
+
+<h2 id="reading">Reading angle lines</h2>
+<p>Read a line as the planet made angular, and so prominent, in that place. The angle says which part of life it works through; the planet's nature and natal condition say how. A well-dignified benefic on an angle is a different proposition from an afflicted malefic there.</p>
+<div class="tablewrap">
+<table>
+<thead><tr><th>Angle</th><th>Brings the planet into</th></tr></thead>
+<tbody>
+<tr><td>MC (culminating)</td><td>Career, status, reputation, what you're known for and how authority treats you</td></tr>
+<tr><td>IC (anti-culminating)</td><td>Home, family, property, inner life, endings and foundations</td></tr>
+<tr><td>ASC (rising)</td><td>Your body, health, identity and personal initiative; others see you through this planet</td></tr>
+<tr><td>DSC (setting)</td><td>Partnerships, marriage, clients, rivals and the people you meet</td></tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li><strong>Distance.</strong> A line is strongest close by and fades with distance. Practitioners differ on how far it reaches; Jim Lewis allowed up to about 700 miles (some 1,100 km) for a strong line, many work with a few hundred.</li>
+<li><strong>Crossings.</strong> Where two lines cross, both planets are angular together; the paran from that crossing carries their combination along the whole latitude.</li>
+<li><strong>Remote activation.</strong> A place can work through dealings with it (clients, family, travel there) without living there.</li>
+<li><strong>The natal chart still governs.</strong> A line can't give what the nativity doesn't promise. It shows where a natal theme is brought forward.</li>
+<li><strong>Check with the wheel.</strong> Cast the relocated chart (Solar Fire <span class="menu">Chart &gt; Locality</span>, or the airplane tool in Solar Maps) to see houses and rulers as well.</li>
+</ul>
+
+<h2 id="parans">Paran lines</h2>
+<p>A paran line marks a latitude where two bodies are on angles at the same moment, for example the Sun culminating as Saturn sets. Unlike angle lines, a paran is felt along the whole latitude band, not at one longitude, which is why Map Parans lists cities by latitude. Solar Maps can show parans of one chosen point with every other, or all of them (too many for a world map). Stars need a star file open first, and a paran point needn't be a displayed point. Work with an orb of about a degree of latitude, and set Limit of Lat (60° is typical) to drop polar parans.</p>
+
+<h2 id="local-space">Local space</h2>
+<p>Local space (Michael Erlewine) draws lines from the chart's place in the direction each planet lay at birth, by azimuth. Follow a line from where you are and you're said to meet that planet's people and matters. The same directions work at the scale of a city or a house: print the Local Horizon Chart onto a transparency, centre it on the place, align north, and read the lines across the map. On a world map the lines are great circles, so they curve on flat projections but are straight on the globe view. City Directions lists the places each line passes through.</p>
+
+<h2 id="celestial">Celestial and geodetic</h2>
+<ul>
+<li><strong>Celestial projection</strong> (the normal one) shows the true sky over the Earth: the ecliptic line and the sign boundaries where each sign is overhead.</li>
+<li><strong>Geodetic projection</strong> lays the zodiac along the equator as bands of longitude, 0° Aries at Greenwich by default (you can set another start, east or west, in Options &gt; Geodetic Zodiac). The title bar then says "(Geodetic)". Each place has fixed geodetic angles (the manual gives Washington DC as MC 14° Capricorn 57′, Ascendant 23° Libra 09′), so planets in those degrees are angular there whatever the birth time. Used by Sepharial and Johndro for mundane work, and useful for untimed charts.</li>
+<li><strong>Eclipse paths</strong> show where a solar eclipse is total and where it is partial; lunar eclipses are seen from a whole hemisphere and aren't mapped. An eclipse is usually read as strongest under the path of totality.</li>
+</ul>
+
+<h2 id="dynamic">Lines over time</h2>
+<p><span class="menu">Chart &gt; Subsidiary Chart</span> (available once a natal chart is open) draws transiting, progressed or directed planets while keeping the <em>natal</em> angles, so you see how far each planet has moved relative to your own map. That's different from casting a transit chart, whose angles belong to the transit moment. The options are transits, secondary progressions, tertiary progressions, solar arc directions, and Sec.Prog + Transits (CCG), Jim Lewis's Cyclo*Carto*Graphy: progressed Sun, Moon, Mercury, Venus and Mars with transiting Jupiter to Pluto. <strong>Restore Natal Chart</strong> goes back. Transiting lines sweep the globe quickly (the Sun about once a year); progressed lines move a degree or so a year.</p>
+
+<h2 id="reports">Reports</h2>
+<ul>
+<li><strong>Map Parans</strong>: parans and cities in one list from north to south, limited to the map shown and the latitude limit. A city within a fraction of a degree of a paran latitude lives under that paran.</li>
+<li><strong>Local Parans</strong>: only parans within 2° of the chart's latitude, the strongest ones where the chart is cast (or relocated).</li>
+<li><strong>City Directions</strong>: cities on (conjunct) or opposite each local space line, with orb, from the map's city file.</li>
+<li><strong>Relocation Interpretations</strong>: choose a city and Solar Maps writes a report covering planets on angles, local space and parans, opened in your word processor. Save it under a new name, as the file is overwritten next time.</li>
+</ul>
+
+<h2 id="workflow">A working method</h2>
+<ol>
+<li>Open the natal chart in Solar Maps and show only the seven planets (and the nodes, if you use them) as displayed points.</li>
+<li>Turn on In Mundo angle lines only. Note which planets run near the places that matter: birthplace, where you live, where you're thinking of going.</li>
+<li>Judge each nearby planet by its natal condition (sign dignity, sect, house rulership) before calling a line good or bad.</li>
+<li>Add parans for the most important planet (Parans Only Of…), then run Local Parans for each place of interest.</li>
+<li>Cast the relocated wheel for each place to see which houses the planets fall in and who rules the new angles.</li>
+<li>Add local space lines last, for directions from where you live.</li>
+<li>For timing, add Sec.Prog + Transits (CCG) or transits for the current date.</li>
+</ol>
+
+<footer>
+<p>Sources: the Solar Fire X User Guide, topic 9.13 <a href="https://alabe.com/SFXManual/solar-maps.html">Solar Maps</a>: <a href="https://alabe.com/SFXManual/displaying-lines.html">Displaying Lines</a>, <a href="https://alabe.com/SFXManual/astro-locality-mapping-and-ast.html">Astro-locality Mapping and Astro*Carto*Graphy</a>, <a href="https://alabe.com/SFXManual/local-space-astrology2.html">Local Space Astrology</a>, <a href="https://alabe.com/SFXManual/selecting-a-paran-point.html">Selecting a Paran Point</a>, <a href="https://alabe.com/SFXManual/selecting-zodiac-projection-ty.html">Zodiac Projection</a>, <a href="https://alabe.com/SFXManual/displaying-transiting_-directe.html">Transiting, Directed or Progressed Lines</a> and <a href="https://alabe.com/SFXManual/reports.html">Reports</a>. Astro*Carto*Graphy and Cyclo*Carto*Graphy are Jim Lewis's registered names. An independent study aid, not affiliated with Astrolabe.</p>
+<p><a href="../">Back to the study plan</a></p>
+</footer>
+</main>
+<script src="guide.js"></script>
+</body>
+</html>

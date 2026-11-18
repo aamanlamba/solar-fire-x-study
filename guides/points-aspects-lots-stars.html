@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Chart points, aspect sets and orbs, Arabic parts, fixed stars, parans and the speculum in Solar Fire X: what each file and option controls and how to set it up for traditional work. A companion to Modules 5, 12 and 13 of the Solar Fire X Study Plan.">
+<meta property="og:title" content="Solar Fire X Points, Aspects, Lots and Stars Guide">
+<meta property="og:description" content="Chart points, aspect sets and orbs, Arabic parts, fixed stars, parans and the speculum in Solar Fire X.">
+<meta property="og:image" content="https://aamanlamba.github.io/solar-fire-x-study/og-image.png">
+<title>Points, Aspects and Stars Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="guide.css">
+</head>
+<body>
+<main>
+<a class="back" href="../#m5">← Solar Fire X Study Plan</a>
+<p class="kicker">Companion to Modules 5, 12 and 13</p>
+<h1>Points, Aspects, Lots and Stars Guide</h1>
+<p class="lede">What each point file, aspect option, Arabic parts file, star file and speculum table in Solar Fire X controls, and how to set them up for traditional work.</p>
+<nav class="toc" aria-label="Sections">
+<a href="#quick-reference">Quick reference</a>
+<a href="#points">Point files</a>
+<a href="#calc">Calculated points</a>
+<a href="#aspects">Aspect sets and orbs</a>
+<a href="#traditional">A traditional aspect set</a>
+<a href="#lots">Arabic parts</a>
+<a href="#stars">Fixed stars</a>
+<a href="#parans">Parans</a>
+<a href="#speculum">The speculum</a>
+</nav>
+
+<h2 id="quick-reference">Quick reference</h2>
+<p>Point and aspect files are chosen and edited from the <span class="menu">Chart Options</span> menu through the File Manager (select a file, then Edit). Each is a named set you can copy and change.</p>
+<label class="filter">Filter <input id="q" type="search" placeholder="e.g. orb, parans, Fortune" autocomplete="off"></label>
+<div class="tablewrap">
+<table id="ref">
+<thead><tr><th>Item</th><th>Where</th><th>What it controls</th><th>Use it for</th></tr></thead>
+<tbody>
+<tr class="grp"><td colspan="4">Point files</td></tr>
+<tr><td>Displayed Points</td><td>Chart Options</td><td>Which of the 36 standard points appear in wheels, grids and reports</td><td>A seven-planet set for traditional charts</td></tr>
+<tr><td>Displayed Transiting Points</td><td>Chart Options</td><td>Points shown for transits in wheels and reports</td><td>Keeping transit rings uncluttered</td></tr>
+<tr><td>Aspected Points</td><td>Chart Options</td><td>Points that get aspect lines in wheels</td><td>Showing the angles without drawing aspects to them</td></tr>
+<tr><td>Displayed User-Defined Points</td><td>Chart Options</td><td>Up to 50 extra points in the main ring: midpoints, fixed degrees, stars, parts, asteroids</td><td>Putting the Lot of Spirit or a star in the wheel itself</td></tr>
+<tr><td>Extra Ring Points</td><td>Chart Options</td><td>Points shown in a separate ring (needs a wheel style with an extra ring)</td><td>Parts, stars, eclipses, prenatal lunations</td></tr>
+<tr><td>Radix / Transiting / Progressing Points</td><td>Dynamic Report Selection</td><td>Which points a dynamic report uses on each side</td><td>Outer planets only for long reports</td></tr>
+<tr><td>Extra transiting, progressing, radix points</td><td>Dynamic Report Selection</td><td>Midpoints, stars, asteroids, extra bodies; radix extras also take parts, fixed degrees and house cusps</td><td>Transits to the Lot of Fortune or to cusps</td></tr>
+<tr class="grp"><td colspan="4">Calculation settings</td></tr>
+<tr><td>Lunar node</td><td>Preferences &gt; Calculations</td><td>True or mean node</td><td>Mean is the older convention</td></tr>
+<tr><td>Black Moon</td><td>Preferences &gt; Calculations</td><td>True (osculating) or mean lunar apogee</td><td>Black Moon Lilith</td></tr>
+<tr><td>Part of Fortune</td><td>Preferences &gt; Calculations</td><td>Day/night reversal or fixed day formula, for wheels and reports</td><td>Choose Different Day/Night</td></tr>
+<tr class="grp"><td colspan="4">Aspects</td></tr>
+<tr><td>Aspect Set</td><td>Chart Options</td><td>Which aspects are on, with natal, progressed and transit orbs, luminary and other, applying and separating</td><td>Ptolemaic aspects with traditional orbs</td></tr>
+<tr><td>Advanced aspect options</td><td>Aspect set editor &gt; Advanced</td><td>Orb ratios per planet, aspects by sign, sign as well as orb, 3D aspects, moieties, one-way orbs, your own aspects</td><td>Moiety orbs; whole-sign aspects</td></tr>
+<tr class="grp"><td colspan="4">Lots</td></tr>
+<tr><td>Arabic Parts file</td><td>Chart Options &gt; Files</td><td>A list of parts defined as A + B − C, with day and night versions</td><td>The Arabic Parts report; almuten summation</td></tr>
+<tr><td>Arabic Parts report</td><td>Reports &gt; Current Chart</td><td>Every part in the current file with its position and aspects to chart points</td><td>Checking lots against planets</td></tr>
+<tr class="grp"><td colspan="4">Stars</td></tr>
+<tr><td>Fixed Stars file</td><td>Chart Options &gt; Files</td><td>The stars used in reports, page objects and the planetarium</td><td>Brady's 50 stars, Ptolemy's, or about 290</td></tr>
+<tr><td>Star Aspects report</td><td>Reports &gt; Current Chart</td><td>Aspects from chart points to stars, by longitude (or 3D)</td><td>Star conjunctions</td></tr>
+<tr><td>Star Parans report</td><td>Reports &gt; Current Chart</td><td>Stars rising, setting or culminating with chart points at the birth latitude</td><td>Brady's paran method</td></tr>
+<tr><td>Parans to Use</td><td>Reports menu</td><td>Which of the four paran types the report includes</td><td>Limiting to rise and set</td></tr>
+<tr><td>Paran display</td><td>Preferences &gt; Misc</td><td>Show paran times as local clock time, LST angle or LST time</td><td>Clock times to observe them</td></tr>
+<tr class="grp"><td colspan="4">In mundo</td></tr>
+<tr><td>Speculum</td><td>View &gt; Speculum</td><td>Full coordinate tables, paran tables, completed parans, topocentric speculum, paran synastry</td><td>Primary directions and mundane aspects</td></tr>
+<tr><td>Rise/Set Times</td><td>Tabulation</td><td>Rise, culmination, set and anti-culmination of each point</td><td>Quick paran values</td></tr>
+<tr><td>Declinations</td><td>Tabulation</td><td>Declination, longitude and longitude equivalent of each point</td><td>Parallels and out-of-bounds planets</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2 id="points">Point files</h2>
+<p>Solar Fire separates <em>which points appear</em> from <em>which points get aspects</em> and from <em>which points dynamic reports use</em>, each in its own named file. That lets you show the angles without drawing aspects to them, or run transits from the outer planets only.</p>
+<ul>
+<li><strong>Displayed Points</strong> is the main switch: the standard 36 points (planets, nodes, angles, Vertex, Fortune, main asteroids, Chiron, Black Moon and the transneptunians). Edit a copy: in the Chart Point Selection dialog, click a point to move it between Selected and Unselected; the Quick Select frame switches whole groups (Planets, Asteroids, TransNeps, Others) on or off.</li>
+<li><strong>Aspected Points</strong> can be smaller than Displayed Points. A common traditional choice: aspect lines between the seven planets only, with the angles, nodes and Fortune displayed but not aspected.</li>
+<li><strong>User-Defined Points</strong> put up to 50 extra points into the main ring: midpoints, fixed degrees, stars, parts, asteroids, extra bodies. Choose <code>None.ptu</code> to remove them. <strong>Extra Ring Points</strong> take the same kinds of point plus prior lunations, eclipses and planetary nodes, in a ring of their own; only wheel styles built with an extra ring show it.</li>
+<li><strong>Dynamic point files</strong> are chosen in the Dynamic Report Selection dialog (Module 9): Radix, Transiting and Progressing points, plus Extra points for each. Keep extra sets to about 50 points or the report becomes unreadable.</li>
+</ul>
+
+<h2 id="calc">Calculated points</h2>
+<ul>
+<li><strong>Part of Fortune.</strong> <em>Different Day/Night</em> uses Ascendant + Moon − Sun by day and Ascendant + Sun − Moon by night, the ancient rule. <em>Fixed Formula</em> uses the day formula always, as older software did. This setting governs wheels and reports; the Arabic Parts report follows its own file instead.</li>
+<li><strong>Lunar node.</strong> True node is the actual node; mean node smooths out the wobble. Traditional texts were computed with the mean node.</li>
+<li><strong>Black Moon.</strong> The lunar apogee, true or mean. It isn't the asteroid Lilith or the hypothetical Dark Moon; the FAQ "How do I display all three Liliths?" explains adding those.</li>
+</ul>
+
+<h2 id="aspects">Aspect sets and orbs</h2>
+<p>An aspect set holds every aspect Solar Fire knows, each switched on (+) or off, with its orbs. Edit a copy from <span class="menu">Chart Options &gt; Aspect Set</span>, then Edit. Double-click an aspect, or use Restore and Remove, to switch it.</p>
+<h3>Orbs</h3>
+<ul>
+<li><strong>Natal</strong> orbs apply to charts and reports other than progressions and dynamic reports. <strong>Progressed</strong> orbs apply to progressed charts. <strong>Transit</strong> orbs set when a dynamic report says a contact is entering or leaving.</li>
+<li>Each can differ for <strong>luminaries</strong> (when the Sun or Moon is one of the pair) and <strong>other</strong> points, and for <strong>applying</strong> and <strong>separating</strong>.</li>
+<li>Applying and separating are worked out from both planets' motion; an angle (Ascendant, MC, Vertex, Equatorial Ascendant) counts as stationary. Between two charts the second chart is held still: the inner wheel of a biwheel, the chart across a synastry grid, the first chart in a synastry report.</li>
+</ul>
+<h3>Advanced options</h3>
+<p>Click <strong>Advanced</strong> in the editor. It stays on while any advanced option is in use, so you can tell at a glance.</p>
+<div class="tablewrap">
+<table>
+<thead><tr><th>Option</th><th>What it does</th><th>Traditional use</th></tr></thead>
+<tbody>
+<tr><td>Use Luminary/Other Orbs</td><td>The standard: one set of orbs for the lights, one for the rest</td><td>Simple modern practice</td></tr>
+<tr><td>Use Planet Orb Ratios</td><td>A base orb per aspect, multiplied by each planet's ratio</td><td>The base for planetary orbs</td></tr>
+<tr><td>Use Moieties</td><td>With orb ratios: the orb is half of each planet's orb added together</td><td>Lilly's and the medieval moieties</td></tr>
+<tr><td>Unidirectional Orbs</td><td>The orb depends on which planet is doing the aspecting (a 12° Sun reaches a 6° planet 9° away, but not the other way)</td><td>Experiment</td></tr>
+<tr><td>Use Aspects by Sign Only</td><td>No orbs: planets aspect by sign alone (only the first nine aspects work)</td><td>Hellenistic whole-sign aspects</td></tr>
+<tr><td>Use Sign as well as Orb</td><td>An aspect in orb also has to be in the right signs, so out-of-sign aspects are dropped</td><td>The usual medieval rule</td></tr>
+<tr><td>Use 3D Aspects (True Body)</td><td>Measures the real angle between bodies, latitude included</td><td>Stars and Pluto; experimental</td></tr>
+<tr><td>User-defined aspects</td><td>Add your own aspect name, angle and glyph</td><td>Any aspect not in the list</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2 id="traditional">A traditional aspect set</h2>
+<ol>
+<li>Copy an aspect set (Chart Options &gt; Aspect Set, select one, Save As) and name it, say, "Ptolemaic moieties".</li>
+<li>Switch off everything but conjunction, sextile, square, trine and opposition.</li>
+<li>Click Advanced, choose <strong>Use Planet Orb Ratios</strong>, tick <strong>Use Moieties</strong> and <strong>Use Sign as well as Orb</strong>.</li>
+<li>Set the base orb for each aspect and give each planet a ratio that yields its orb. Lilly's orbs (whole orbs, before halving) are about: Sun 17°, Moon 12½°, Saturn 10°, Jupiter 12°, Mars 7½°, Venus 7–8°, Mercury 7°.</li>
+<li>Save, select the set, and check a chart: the Sun and Saturn should then be in aspect within 13½° (8½ + 5).</li>
+</ol>
+<p>For Hellenistic work make a second set with <strong>Use Aspects by Sign Only</strong> and the five Ptolemaic aspects.</p>
+
+<h2 id="lots">Arabic parts</h2>
+<p>A part (lot) is a point found as A + B − C: the distance from C to B, measured from A. Solar Fire's part files are edited in the Arabic Parts Editor (<span class="menu">Chart Options &gt; Files &gt; Arabic Parts</span>, select a file, Edit).</p>
+<ul>
+<li><strong>Supplied files:</strong> <code>Allparts.arp</code> (all the NOVA parts) and <code>Moreparts.arp</code> (150 parts). Copy one and cut it down to the lots you use, so the report stays readable.</li>
+<li><strong>Each part</strong> has a full name (keep it under about 30 characters), a unique abbreviation (up to 15) that other parts can refer to, a Day, Night or Both setting, and the formula. A reversing part such as Fortune or Spirit needs two entries, one Day and one Night.</li>
+<li><strong>Formula elements</strong> can be a chart point, a fixed degree (e.g. 15Cn00), the dispositor of a point, a house cusp, the ruler of a house cusp, another part in the file (e.g. FortD), or a prenatal lunation.</li>
+<li><strong>Reordering or deleting parts</strong> breaks any almuten definition that uses that file; re-select the parts in the Dignity/Almuten Editor afterwards.</li>
+</ul>
+<p><strong>Reading lots.</strong> Treat a lot like a house cusp for its topic: its sign ruler (and that ruler's condition and house) shows how the matter fares; planets conjunct or aspecting the lot colour it. Fortune concerns the body and circumstances, Spirit the mind and actions; the other Hermetic lots (Eros, Necessity, Courage, Victory, Nemesis) are built from them.</p>
+
+<h2 id="stars">Fixed stars</h2>
+<ul>
+<li><strong>Star files:</strong> <code>BRADY.FST</code>, 50 stars with Bernadette Brady's interpretations and +/− markers for especially easy or difficult stars; <code>PTOLEMY.FST</code>, Ptolemy's stars with their planetary natures; <code>ALLSTARS.FST</code>, about 290 stars without text. Choose one from <span class="menu">Chart Options &gt; Files &gt; Fixed Stars</span>.</li>
+<li><strong>Star Aspects</strong> lists chart points in aspect to stars by ecliptic longitude. Use a small orb (1° or less) and mostly conjunctions. A star far from the ecliptic can be "conjunct" by longitude while sitting nowhere near the planet in the sky; the 3D option tests the real distance.</li>
+<li><strong>Star Parans</strong> lists stars that reach an angle at the same moment as a chart point at the birth latitude, whatever their longitude. Brady works this way and suggests an orb of 15–20 minutes. Choose which of rise, set, culminate and anti-culminate to include from <span class="menu">Reports &gt; Parans to Use</span>.</li>
+<li><strong>Editing stars</strong>: the Fixed Star Editor adds stars or other objects, changes the epoch, sorts the file and shows a star in the planetarium.</li>
+</ul>
+
+<h2 id="parans">Parans</h2>
+<p>A paran (from <em>paranatellonta</em>, rising together) happens when two bodies are on the angles at the same time: one rising as another culminates, both setting together, and so on. It depends on latitude, not on longitude, so it links stars and planets that ecliptic aspects can't. Solar Fire shows parans in three places: the Star Parans report (stars with chart points), the speculum's paran tables and Completed Parans (planets with each other within 1°), and Solar Maps' paran lines (Module 18), which show the latitudes where each pair is in paran.</p>
+
+<h2 id="speculum">The speculum</h2>
+<p><span class="menu">View &gt; Speculum</span> lists each body's positions in several coordinate systems, the raw material for primary directions and mundane aspects. The main columns:</p>
+<div class="tablewrap">
+<table>
+<thead><tr><th>Column</th><th>Meaning</th><th>Used for</th></tr></thead>
+<tbody>
+<tr><td>Long., Lat.</td><td>Ecliptic longitude and latitude</td><td>Zodiacal work; latitude for directions "with latitude"</td></tr>
+<tr><td>R.A., Decl.</td><td>Right ascension and declination on the equator</td><td>Parallels, primary directions</td></tr>
+<tr><td>Paran Coord.</td><td>The RAMC when the body rises, culminates, sets and anti-culminates</td><td>Finding parans: equal values mean simultaneous angularity</td></tr>
+<tr><td>OA, OD</td><td>Oblique ascension and descension: where the equator meets the horizon as the body rises or sets</td><td>Directions to the Ascendant and Descendant; ascensional times</td></tr>
+<tr><td>DSA, NSA</td><td>Diurnal and nocturnal semi-arcs: the body's arc above and below the horizon</td><td>Placidian directions; Placidus houses for any planet</td></tr>
+<tr><td>Prop.</td><td>How far through its current semi-arc the body has travelled, as a decimal</td><td>Mundane position; mundane aspects</td></tr>
+<tr><td>CCAD, CAD</td><td>Distance in RA to the nearest angle, counter-clockwise and clockwise</td><td>Arcs needed to bring a body to an angle</td></tr>
+<tr><td>Pl. Lg.</td><td>Placidus mundoscope position, expressed as a longitude</td><td>Reading mundane houses and aspects as a wheel</td></tr>
+</tbody>
+</table>
+</div>
+<p>The <strong>Topocentric speculum</strong> gives the tables for Page and Polich's topocentric houses (its OA/OD column isn't the ordinary oblique ascension). <strong>Paran comparison</strong> lists parans between two charts, a mundane form of synastry. The same coordinates can be shown as wheels with the zodiacal analogue charts on <span class="menu">Chart &gt; Harmonic/Transform</span> (see the Subsidiary Charts Guide).</p>
+
+<footer>
+<p>Sources: the Solar Fire X User Guide, topics 10.2 <a href="https://alabe.com/SFXManual/editing_a_chart_points_file.html">Editing a Chart Points File</a>, 10.3 <a href="https://alabe.com/SFXManual/editing_an_aspect_set.html">Editing an Aspect Set</a> and <a href="https://alabe.com/SFXManual/selecting_advanced_options.html">Advanced Options</a>, 10.6 to 10.11 on user-defined, extra, asteroid, <a href="https://alabe.com/SFXManual/editing_an_arabic_parts_file.html">Arabic parts</a> and <a href="https://alabe.com/SFXManual/editing_a_fixed_stars_file.html">fixed star</a> files, 8.5 <a href="https://alabe.com/SFXManual/the-speculum.html">The Speculum</a>, and <a href="https://alabe.com/SFXManual/fixed_stars_data_and_text.html">Fixed Stars Data and Text</a>. Lilly's orbs are from <em>Christian Astrology</em>. An independent study aid, not affiliated with Astrolabe.</p>
+<p><a href="../">Back to the study plan</a></p>
+</footer>
+</main>
+<script src="guide.js"></script>
+</body>
+</html>
